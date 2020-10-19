@@ -1,0 +1,32 @@
+const winston = require("winston");
+
+const logger = winston.createLogger({
+  level: 3,
+  format: winston.format.json(),
+  defaultMeta: { service: process.env.APP_NAME || "TBD" },
+  transports: [
+    //
+    // - Write all logs with level `error` and below to `error.log`
+    // - Write all logs with level `info` and below to `combined.log`
+    //
+    new winston.transports.File({ filename: "logs/error.log", level: "error" }),
+    new winston.transports.File({
+      filename: "logs/combined.log",
+      level: "debug",
+    }),
+  ],
+});
+
+//
+// If we're not in production then log to the `console` with the format:
+// `${info.level}: ${info.message} JSON.stringify({ ...rest }) `
+//
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    })
+  );
+}
+
+module.exports = logger;
