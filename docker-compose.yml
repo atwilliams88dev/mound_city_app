@@ -9,7 +9,7 @@ services:
       - POSTGRES_DB=mound_city
       - POSTGRES_PASSWORD=password
     volumes:
-      - /Users/alex/Projects/moundCityServer/pgdata:/var/lib/postgresql/data
+      - ./pgdata:/var/lib/postgresql/data
     ports:
       - "5433:5432"
 
@@ -29,8 +29,8 @@ services:
     image: express-starter
     container_name: mound_city_express_app
     volumes:
-      - /Users/alex/Projects/moundCityServer/logs/combined.log:/logs/combined.log
-      - /Users/alex/Projects/moundCityServer/logs/error.log:/logs/error.log
+      - ./logs/combined.log:/logs/combined.log
+      - ./logs/error.log:/logs/error.log
     deploy:
       restart_policy:
         condition: on-failure
@@ -55,4 +55,4 @@ services:
       - db
       - web
     volumes:
-      - /Users/alex/Projects/moundCityServer/reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
