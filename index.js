@@ -16,6 +16,7 @@ const mountRoutes = require("./routes");
 app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
+app.use("/static", express.static("static"));
 
 // PROD ONLY MIDDLEWARE
 if (process.env.NODE_ENV === "PRODUCTION") {

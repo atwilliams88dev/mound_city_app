@@ -12,6 +12,19 @@ services:
       - /Users/alex/Projects/moundCityServer/pgdata:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+
+  admin:
+    image: dpage/pgadmin4
+    container_name: mound_city_db_admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+      - reverse-proxy
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+
   web:
     image: express-starter
     container_name: mound_city_express_app
@@ -32,6 +45,7 @@ services:
       - db
     ports:
       - "3000:3000"
+
   reverse-proxy:
     image: nginx
     container_name: mound_city_nginx
