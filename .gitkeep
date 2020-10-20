@@ -1,0 +1,10 @@
+pgdata/pg_tblspc
+pgdata/pg_commit_ts
+pgdata/pg_dynshmem
+pgdata/pg_notify
+pgdata/pg_replshot
+pgdata/pg_serial
+pgdata/pg_snapshots
+pgdata/pg_stat
+pgdata/pg_tblspc
+pgdata/pg_twophase
