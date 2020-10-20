@@ -13,13 +13,14 @@ let PORT = process.env.PORT || 3000;
 const mountRoutes = require("./routes");
 
 // MIDDLEWARE
-app.use(helmet());
 app.use(cookieParser());
 app.use(express.json());
-app.use("/static", express.static(__dirname + "/static"));
+app.use("/static", express.static(__dirname + "/static/"));
 
 // PROD ONLY MIDDLEWARE
 if (process.env.NODE_ENV === "PRODUCTION") {
+  // requires all datacalls at https
+  app.use(helmet());
   app.use(compression());
 }
 
