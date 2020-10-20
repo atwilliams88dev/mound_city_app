@@ -1,5 +1,7 @@
 const path = require("path");
 
+// If a single file grows too large consider code splitting
+
 module.exports = {
   entry: "./static/scripts/src",
   output: {
