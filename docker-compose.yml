@@ -56,3 +56,10 @@ services:
       - web
     volumes:
       - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+
+  # lets-encrypt:
+  #   image: certbot/dns-digitalocean
+  #   volumes:
+  #     - ./etc/letsencrypt:/etc/letsencrypt
+  #     - ./var/lib/letsencrypt:/var/lib/letsencrypt
+  #   command: certbot/certbot, certonly

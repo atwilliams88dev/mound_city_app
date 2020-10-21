@@ -19,7 +19,7 @@ app.use("/static", express.static(__dirname + "/static/"));
 
 // PROD ONLY MIDDLEWARE
 if (process.env.NODE_ENV === "PRODUCTION") {
-  // requires all datacalls at https
+  // requires all data calls at https
   app.use(helmet());
   app.use(compression());
 }
