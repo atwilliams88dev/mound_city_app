@@ -11,7 +11,7 @@
     "dev": "nodemon index.js",
     "prebuild": "webpack --config webpack.config.js",
     "build": "docker build -t express-starter .",
-    "postbuild": "docker-compose up -d"
+    "postbuild": "docker-compose up -d --remove-orphans"
   },
   "keywords": [],
   "author": "",
