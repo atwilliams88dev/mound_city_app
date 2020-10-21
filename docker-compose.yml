@@ -12,6 +12,8 @@ services:
       - ./pgdata:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+    networks:
+      - app-network
 
   admin:
     image: dpage/pgadmin4
@@ -24,6 +26,8 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=password
+    networks:
+      - app-network
 
   web:
     image: express-starter
@@ -31,6 +35,8 @@ services:
     volumes:
       - ./logs/combined.log:/logs/combined.log
       - ./logs/error.log:/logs/error.log
+    networks:
+      - app-network
     deploy:
       restart_policy:
         condition: on-failure
@@ -50,7 +56,7 @@ services:
     image: nginx
     container_name: mound_city_nginx
     ports:
-      - "80:80"
+      - "8080:80"
       - "443:443"
     depends_on:
       - db
@@ -60,6 +66,8 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - web-root:/var/www/html
+    networks:
+      - app-network
       # - ./reverse_proxy/nginx.conf:/etc/nginx/conf.d
 
   certbot:
@@ -73,3 +81,17 @@ services:
       - web
       - reverse-proxy
     command: certonly --webroot --webroot-path=/var/www/html --email atwilliams88dev@gmail.com --agree-tos --no-eff-email --staging -d moundcity.io  -d www.moundcity.io
+
+volumes:
+  certbot-etc:
+  certbot-var:
+  web-root:
+    driver: local
+    # driver_opts:
+    #   type: none
+    #   device: /home/sammy/node_project/views/
+    #   o: bind
+
+networks:
+  app-network:
+    driver: bridge
