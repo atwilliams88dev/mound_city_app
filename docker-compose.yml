@@ -20,7 +20,7 @@ services:
       - "5050:80"
     depends_on:
       - db
-      - reverse-proxy
+      # - reverse-proxy
     environment:
       - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=password
@@ -46,18 +46,20 @@ services:
     ports:
       - "3000:3000"
 
-  reverse-proxy:
-    image: nginx
-    container_name: mound_city_nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    depends_on:
-      - db
-      - web
-    volumes:
-      - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
-      # - <path/to/your/certs>:/etc/ssl/private
+  # reverse-proxy:
+  #   image: nginx
+  #   container_name: mound_city_nginx
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   depends_on:
+  #     - db
+  #     - web
+  #   volumes:
+  #     - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
+  #     - /root/certs-data/:/data/letsencrypt/
+
+  # - <path/to/your/certs>:/etc/ssl/private
 
   # lets-encrypt:
   #   image: certbot/dns-digitalocean
