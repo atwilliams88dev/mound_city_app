@@ -23,7 +23,7 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=password
-      - PGAMIN_LISTEN_PORT=5454
+      - PGADMIN_LISTEN_PORT=5454
 
   web:
     image: express-starter

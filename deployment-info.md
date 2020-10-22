@@ -44,3 +44,7 @@ In DigitalOcean select "Networking" then enter domain
 # Error logging.
 
 We should use a service like https://sentry.io/welcome/
+
+# Updating BOXES
+
+If you have updated the database with PG Admin YOU MUST PUSH THE CODE TO GITHUB OR THE pgdata FOLDER WILL GET REPLACED!!!
