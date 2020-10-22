@@ -9,7 +9,7 @@ const compression = require("compression");
 
 // APP CONFIG
 const app = express();
-let PORT = process.env.PORT || 3000;
+let PORT = process.env.EXPRESS_PORT || 3000;
 const mountRoutes = require("./routes");
 
 // MIDDLEWARE

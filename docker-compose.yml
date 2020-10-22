@@ -3,11 +3,11 @@ version: "3.8"
 services:
   db:
     image: postgres:13.0-alpine
-    container_name: mound_city_postgress_db
+    container_name: ${DB_CONTAINER_NAME}
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=mound_city
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_DB=${PGDATABASE}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
     volumes:
       - ./pgdata:/var/lib/postgresql/data
     ports:
@@ -15,19 +15,19 @@ services:
 
   admin:
     image: dpage/pgadmin4
-    container_name: mound_city_db_admin
+    container_name: ${PG_ADMIN_CONTAINER_NAME}
     ports:
       - "5454:5454/tcp"
     depends_on:
       - db
     environment:
-      - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
-      - PGADMIN_DEFAULT_PASSWORD=password
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_EMAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGPASSWORD}
       - PGADMIN_LISTEN_PORT=5454
 
   web:
     image: express-starter
-    container_name: mound_city_express_app
+    container_name: ${EXPRESS_CONTAINER_NAME}
     volumes:
       - ./logs/combined.log:/logs/combined.log
       - ./logs/error.log:/logs/error.log
@@ -35,11 +35,11 @@ services:
       restart_policy:
         condition: on-failure
     environment:
-      - PORT=3000
-      - PGUSER=postgres
-      - PGPORT=5432;
-      - PGDATABASE=mound_city
-      - PGPASSWORD=password
+      - PORT=${EXPRESS_PORT}
+      - PGUSER=${PGUSER}
+      - PGPORT=${PGPORT};
+      - PGDATABASE=${PGDATABASE}
+      - PGPASSWORD=${PGPASSWORD}
       - PGHOST=db
     depends_on:
       - db
