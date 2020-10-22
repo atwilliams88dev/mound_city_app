@@ -1,0 +1,18 @@
+Folder Info
+// folders
+db - holds the db pool connection information, its part of express.js
+logs - from winston middleware (express) we save error logs to this folder which will be available within the docker container of web app
+node_modules - javascript stuff - connects with package.json files
+pgdata - this is docker volume that allows us to seed our postgres DB and work with data.
+routes - express js routes. This is similar to a controller
+views - template language backed by mozilla https://mozilla.github.io/nunjucks/
+.env file - holds environment variables
+.gitignore - tells git to ignore path
+docker-compose - allows us to network multiple docker images together
+Dockerfile - builds our express app
+index.js - root of our express app
+logger.js - part of winston middleware. Use logger instead console.log
+package.json / package.lock.json - Where we list our dependency
+postcss.config.js - we are using postcss with tailwind css
+tailwind.config.js - This is how we theme and control tailwind
+webpack.config.js - This is how we compile our static js files.
