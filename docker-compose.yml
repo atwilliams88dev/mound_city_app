@@ -3,6 +3,7 @@ version: "3.8"
 services:
   db:
     image: postgres:13.0-alpine
+    restart: on-failure
     container_name: ${DB_CONTAINER_NAME}
     environment:
       - POSTGRES_USER=${PGUSER}
@@ -16,6 +17,7 @@ services:
   admin:
     image: dpage/pgadmin4
     container_name: ${PG_ADMIN_CONTAINER_NAME}
+    restart: on-failure
     ports:
       - "5454:5454/tcp"
     depends_on:
@@ -31,6 +33,7 @@ services:
     volumes:
       - ./logs/combined.log:/logs/combined.log
       - ./logs/error.log:/logs/error.log
+    restart: on-failure
     deploy:
       restart_policy:
         condition: on-failure

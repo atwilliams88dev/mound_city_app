@@ -1,2 +1,4 @@
 {"message":"Error: connect ECONNREFUSED 127.0.0.1:5433","level":"error","service":"mound_city_starter"}
 {"message":"Error: connect ECONNREFUSED 127.0.0.1:5433","level":"error","service":"mound_city_starter"}
+{"message":"error: relation \"mound_users\" does not exist","level":"error","service":"mound_city_starter"}
+{"message":"error: relation \"mound_users\" does not exist","level":"error","service":"mound_city_starter"}
