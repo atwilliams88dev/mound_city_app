@@ -17,13 +17,13 @@ services:
     image: dpage/pgadmin4
     container_name: mound_city_db_admin
     ports:
-      - "5050:80"
+      - "5454:5454/tcp"
     depends_on:
       - db
-      # - reverse-proxy
     environment:
       - PGADMIN_DEFAULT_EMAIL=atwilliams88@gmail.com
       - PGADMIN_DEFAULT_PASSWORD=password
+      - PGAMIN_LISTEN_PORT=5454
 
   web:
     image: express-starter
@@ -43,5 +43,6 @@ services:
       - PGHOST=db
     depends_on:
       - db
+      - admin
     ports:
       - "3000:3000"

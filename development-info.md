@@ -27,4 +27,17 @@
     <li>Run npm install</li>
     <li>Run npm start</li>
     <li>You might need to run npm run initDB - this is because the docker volume contains required empty folders that are not tracked by git</li>
+</ol>
+<br/>
+
+# Connecting to pg admin on Droplet
+
 <ol>
+    <li>In the browser enter enter the droplet ip address (from DO) with port 5432. example 157.230.179.224:5432</li>
+    <li>login with credentials from docker compose </li>
+    <li>In the droplet run docker ps to get the container id of the running postgres instance </li>
+    <li>Run docker inspect <dockerContainerId> | grep IPAddress </li>
+    <li>Back in the pgadmin page - use the Ip address in the Host name/address</li>
+    <li>Port should be 5432</li>
+    <li>Update username and password</li>
+</ol>
