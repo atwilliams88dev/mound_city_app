@@ -7,6 +7,10 @@ digital ocean droplet - select docker Its build on top of Ubuntu 20.14
 
 //Domain Names
 purchase domain names through name cheap and set custom DNS to ns1.digitalocean.com, ns2.digitalocean.com, ns3.digitalocean.com
-In digitalocean select "Networking" then enter domain
+In DigitalOcean select "Networking" then enter domain
 * enter @ symbol then the desired droplet
 * enter www then the desired droplet
+
+
+// Error logging.
+// We should use a service like https://sentry.io/welcome/

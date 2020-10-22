@@ -16,3 +16,6 @@ package.json / package.lock.json - Where we list our dependency
 postcss.config.js - we are using postcss with tailwind css
 tailwind.config.js - This is how we theme and control tailwind
 webpack.config.js - This is how we compile our static js files.
+
+// to run app locally you might need to change the port mappings of the docker-compose
+// " 8080:80  myMachine:DockerContainer"
