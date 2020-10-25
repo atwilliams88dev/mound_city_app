@@ -48,3 +48,13 @@ We should use a service like https://sentry.io/welcome/
 # Updating BOXES
 
 If you have updated the database with PG Admin YOU MUST PUSH THE CODE TO GITHUB OR THE pgdata FOLDER WILL GET REPLACED!!!
+
+<br/>
+
+# Links
+
+<ul>
+  <li> Nunjucks - templating engine - https://mozilla.github.io/nunjucks/templating.html </li>
+  <li> TailwindCSS - css framework https://tailwindcss.com/ </li>
+  <li> OMGSVG - svg compression - https://jakearchibald.github.io/svgomg/
+</ul>

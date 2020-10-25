@@ -41,3 +41,9 @@
     <li>Port should be 5432</li>
     <li>Update username and password</li>
 </ol>
+
+# Quick Tips
+
+<ul>
+    <li>If you want to make changes to your main.css page you will need to rebuild webpack because its generated</li>
+</ul>

@@ -29,10 +29,13 @@
     "pg": "^8.4.1",
     "pm2": "^4.5.0",
     "tailwindcss": "^1.9.5",
+    "uninstall": "0.0.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "connect-livereload": "^0.6.1",
     "css-loader": "^5.0.0",
+    "livereload": "^0.9.1",
     "postcss": "^8.1.2",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
