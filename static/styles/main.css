@@ -43,10 +43,12 @@ a:focus {
 
 @keyframes slide-right {
     0% {
+        opacity: .5;
         transform: translateX(-120vw);
     }
 
     100% {
+        opacity: 1;
         transform: translateX(0vw);
     }
 }
@@ -55,10 +57,12 @@ a:focus {
 
 @keyframes slide-left {
     0% {
+        opacity: 1;
         transform: translateX(0vw);
     }
 
     100% {
+        opacity: .5;
         transform: translateX(-120vw);
     }
 }
