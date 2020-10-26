@@ -1,4 +1,7 @@
 import css from "../../styles/main.css";
-import { test } from "./home_page_scripts/home";
+import { toggleNav } from "./home_page_scripts/togglenav";
 
-test();
+window.addEventListener("DOMContentLoaded", (e) => {
+  console.log("DOM fully loaded and parsed");
+  toggleNav();
+});
