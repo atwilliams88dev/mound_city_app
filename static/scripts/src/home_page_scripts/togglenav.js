@@ -2,7 +2,7 @@ export const toggleNav = () => {
   const nav = document.querySelector("#hamburgerIcon");
   const closeSidebar = document.querySelector("#closeSidebar");
   const sidebar = document.querySelector("#sidebar");
-  const main = document.querySelector("main");
+  const main = document.querySelector("#mainContainer");
   if (nav) {
     nav.addEventListener("click", () => {
       const isSidebarHidden = Array.from(sidebar.classList).indexOf("hidden");
