@@ -7,19 +7,18 @@ export const toggleNav = () => {
       const isSidebarHidden = Array.from(sidebar.classList).indexOf("hidden");
       if (isSidebarHidden > -1) {
         sidebar.classList.remove("hidden");
-      } else {
-        sidebar.classList.add("hidden");
+        sidebar.classList.add("slide-right");
       }
     });
   }
   if (closeSidebar) {
     closeSidebar.addEventListener("click", () => {
-      const isSidebarHidden = Array.from(sidebar.classList).indexOf("hidden");
-      if (isSidebarHidden > -1) {
-        sidebar.classList.remove("hidden");
-      } else {
+      sidebar.classList.remove("slide-right");
+      sidebar.classList.add("slide-left");
+      setTimeout(() => {
         sidebar.classList.add("hidden");
-      }
+        sidebar.classList.remove("slide-left");
+      }, 300);
     });
   }
 };
