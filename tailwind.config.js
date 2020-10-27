@@ -19,6 +19,10 @@ module.exports = {
       off: "#F7FAFC",
       primary: "#270A49",
       secondary: "#F95B3D",
+      dark: "#42445D",
+      darker: "#333242",
+      yellow: "#FFB725",
+      brightBlue: "#0D5BD9",
     },
     fontFamily: {
       montserrat: ["Montserrat"],

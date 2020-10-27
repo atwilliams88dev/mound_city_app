@@ -1,6 +1,4 @@
 {% from "./components/header.njk" import header %}
-
-{# {% from "" import nav as navElm %} #}
 <!doctype html>
 <html class="no-js" lang="">
   {{ header(
@@ -12,11 +10,43 @@
     "https://fonts.googleapis.com/css2?family=Quicksand&display=swap"]
     )
   }}
-  <body class="bg-off font-montserrat font-medium relative">
-    <main id="mainContainer" class="container mx-auto p-4 ">
+  <body class="font-montserrat font-medium relative">
+    <main id="mainContainer">
       {% include "./components/nav.njk" %}
-      {# <p class="text-xl">Hello world! This is HTML5 Boilerplate. {{ email }}</p> #}
       {% include "./sections/home_page/section_one.njk" %}
+      <section class="pt-8 pb-16 bg-dark">
+        <div class="container mx-auto p-4 lg:p-0 ">
+              <h2 class="text-4xl text-white">Services Offered</h2>
+              <div class=" max-w-2xl text-white mt-2 mb-8 font-light">
+                  We work with very talented folks. Please reach out to us if you are looking for something else in the development world.
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                  <div class="text-2xl text-secondary mb-4"> Web and Mobile Apps</div>
+                  <img style="width: 75%; max-height:165px" class=" ml-auto m-8" src="../static/images/webAndMobile.svg">
+                  <div class="font-light text-primary">Web applications can be as simple as a <span class=" font-bold">small business website </span> and as complex as a cloud based, cross platform, (<span class="font-bold">IOS</span> & <span class="font-bold">Android</span>) web application. We are here to help you with whatever you need on the web.</div>
+                </div>
+                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                  <div class="text-2xl text-secondary mb-4"> Web Design</div>
+                  <img style="width: 70%; max-height:165px" class=" ml-auto m-8" src="../static/images/webDesign.svg">
+                  <div class="font-light text-primary">Web design is more than making a website look pretty. A design needs to work for your business. <span class=" font-bold">We build and design accessible apps for everyone, no matter their skill level or capabilities. </span></div>
+                </div>                
+                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                  <div class="text-2xl text-secondary mb-4">Content Creation</div>
+                  <img style="width: 75%; max-height:165px" class=" ml-auto m-8" src="../static/images/content.svg">
+                  <div class="font-light text-primary"><span class="font-bold"> Content is King!</span> Writing good content is one of the most important pieces to a great app or webiste. Unfortunatley, its often overlooked.</div>
+                </div>  
+                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                  <div class="text-2xl text-secondary mb-4">SEO</div>
+                  <img style="width: 75%; max-height:165px" class=" ml-auto m-8" src="../static/images/seo.svg">
+                  <div class="font-light text-primary">Search engine optimization <span class="font-bold"> (SEO) often offers the very best ROI.</span>
+                    But it can be hard to pin point what SEO is. We can help tailer a plan to increase your page rank over time.
+                    Any service offering quick results is just trying to take your money.
+                   </div>
+                </div>  
+              </div>
+        </div>
+      </section>
     </main>
     {% include "./components/sidebar.njk" %}
   </body>
