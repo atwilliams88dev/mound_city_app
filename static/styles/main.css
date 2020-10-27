@@ -39,7 +39,32 @@ a:focus {
 .slide-left {
     animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+.fade-in {
+    animation: fade-in 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.fade-out {
+    animation: fade-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
+@keyframes fade-in {
+        0% {
+            opacity: .5;
+        }
+
+        100% {
+            opacity: 1;
+        }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
 
 @keyframes slide-right {
     0% {

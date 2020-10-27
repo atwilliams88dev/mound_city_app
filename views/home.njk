@@ -32,14 +32,24 @@
             <div class="mt-4 font-normal text-primary">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit molestiae optio laborum, eius fugiat esse. Odit fuga sint cum deleniti repellat, soluta voluptatum inventore! Quia voluptas et nostrum mollitia ut.
             </div>
+            <div id="shovelExtra" class="hidden mt-4 font-normal text-primary" >
+              <div>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ad, voluptate optio neque commodi labore distinctio possimus nam, dolore corrupti placeat maiores accusamus voluptatem, porro aliquid ex beatae perspiciatis omnis odio. Doloribus rem voluptate neque adipisci nesciunt dolorem officia id debitis saepe accusantium! Qui tenetur eaque illum similique sunt, ex obcaecati praesentium dolorem nostrum dolor eligendi, expedita, quae ducimus sequi fugit maxime vel assumenda recusandae nihil quidem laborum rem! Impedit, tempore maxime. Voluptates alias dignissimos omnis sapiente fugiat quaerat labore doloribus voluptas iste iusto magni quasi modi harum pariatur voluptatem vitae, quidem consectetur laudantium similique reprehenderit corporis ducimus tempora! Libero?
+              </div>
+              <br/>
+              <div>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum ad, voluptate optio neque commodi labore distinctio possimus nam, dolore corrupti placeat maiores accusamus voluptatem, porro aliquid ex beatae perspiciatis omnis odio. Doloribus rem voluptate neque adipisci nesciunt dolorem officia id debitis saepe accusantium! Qui tenetur eaque illum similique sunt, ex obcaecati praesentium dolorem nostrum dolor eligendi, expedita, quae ducimus sequi fugit maxime vel assumenda recusandae nihil quidem laborum rem! Impedit, tempore maxime. Voluptates alias dignissimos omnis sapiente fugiat quaerat labore doloribus voluptas iste iusto magni quasi modi harum pariatur voluptatem vitae, quidem consectetur laudantium similique reprehenderit corporis ducimus tempora! Libero?
+              </div>
+            </div>
             <div class="flex justify-center mt-8">
-              {% include "./svg/shovel.njk" %}
-              <button type="button" class="text-primary font-semibold">
-                Dig Deeper
-              </button
+              <button id="shovelButton"type="button" class="text-primary p-2 font-semibold flex">
+                {% include "./svg/shovel.njk" %}          
+                <span>Dig Deeper</span>
+              </button>
             </div>
           </div>
         </div>
+        
       </section>
     </main>
     {% include "./components/sidebar.njk" %}
