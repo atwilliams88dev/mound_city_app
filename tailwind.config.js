@@ -23,6 +23,8 @@ module.exports = {
       darker: "#333242",
       yellow: "#FFB725",
       brightBlue: "#0D5BD9",
+      babyBlue: "#EFF5FF",
+      primaryBlue: "#0A429F",
     },
     fontFamily: {
       montserrat: ["Montserrat"],
