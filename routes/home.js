@@ -18,18 +18,19 @@ home_router.get("/", async (req, res) => {
   //   const email = result.rows[0].email;
   //   res.render("home.njk", { email: email });
   // });
-  try {
-    const { rows } = await db.query('SELECT * FROM "mound_users" WHERE id=$1', [
-      1,
-    ]);
-    const { email } = rows[0];
-    res.render("home.njk", { email: email });
-  } catch (err) {
-    logger.info(`in combo`);
+  // try {
+  //   const { rows } = await db.query('SELECT * FROM "mound_users" WHERE id=$1', [
+  //     1,
+  //   ]);
+  //   const { email } = rows[0];
+  //   res.render("home.njk", { email: email });
+  // } catch (err) {
+  //   logger.info(`in combo`);
 
-    logger.error(`${err}`);
+  //   logger.error(`${err}`);
 
-    res.status(500).render("500.njk");
-  }
+  //   res.status(500).render("500.njk");
+  // }
+  res.render("home.njk", { route: "/" });
 });
 module.exports = home_router;
