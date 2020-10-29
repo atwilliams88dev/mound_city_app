@@ -1,0 +1,19 @@
+{% from "./components/header.njk" import header %}
+<!doctype html>
+<html class="no-js" lang="">
+  {{ header(
+    scripts=["../static/scripts/dist/contact.js"],
+    title="Mound City Development | Contact Us",
+    description="Contact Mound City Development  | We would love to hear from you",
+    links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+    "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
+    )
+  }}
+  <body class="font-montserrat font-medium relative">
+    <main id="mainContainer">
+      {% include "./components/nav.njk" %}
+      <h1>Contact Us</h1>
+    </main>
+    {% include "./components/sidebar.njk" %}
+  </body>
+</html>

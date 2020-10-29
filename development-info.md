@@ -47,3 +47,8 @@
 <ul>
     <li>If you want to make changes to your main.css page you will need to rebuild webpack because its generated</li>
 </ul>
+
+# Code Splitting
+
+We are using webpack for code splitting our JS on the client side. Every page should have a directory inside the static/scripts/src directory. This directory should have a corresponding section within the
+Webpack config entry section. This keeps us from sending bloat.
