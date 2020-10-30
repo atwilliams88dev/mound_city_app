@@ -74,6 +74,7 @@ export const toggleShovel = () => {
             </defs>
         </svg>
         Dig Deeper`;
+        shovelButton.scrollIntoView();
       }, 300);
     }
   });

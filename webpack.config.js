@@ -1,4 +1,5 @@
 const path = require("path");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 // If a single file grows too large consider code splitting
 
@@ -11,6 +12,8 @@ module.exports = {
     path: path.resolve(__dirname, "./static/scripts/dist"),
     filename: "[name].js",
   },
+  plugins: [new CompressionPlugin()],
+
   // entry: "./static/scripts/src/contact_page_scripts/contact.js",
   // output: {
   //   path: path.resolve(__dirname, "./static/scripts/dist/contact"),

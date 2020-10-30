@@ -10,7 +10,8 @@ module.exports = {
     layers: ["utilities"],
     content: [
       // Paths to your templates...
-      "./static/scripts/dist/bundle.js",
+      "./views",
+      // "./static/scripts/dist/bundle.js",
     ],
   },
   theme: {
