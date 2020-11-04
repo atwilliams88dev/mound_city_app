@@ -15,11 +15,11 @@ contact_router.get("/contact", async (req, res) => {
   res.render("contact.njk", {
     phone: process.env.PHONE_NUMBER,
     email: process.env.EMAIL,
-    user_firstName: "Alex",
-    user_lastName: "Williams",
-    user_email: "atwilliams88@gmail.com",
-    user_phone: "6182679893",
-    join: true,
+    user_firstName: "",
+    user_lastName: "",
+    user_email: "",
+    user_phone: "",
+    join: false,
     hire: false,
     csrfToken: req.csrfToken()
   });

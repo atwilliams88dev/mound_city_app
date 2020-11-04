@@ -44,6 +44,9 @@ services:
       - PGDATABASE=${PGDATABASE}
       - PGPASSWORD=${PGPASSWORD}
       - PGHOST=db
+      - PHONE_NUMBER=${PHONE_NUMBER}
+      - EMAIL=${EMAIL}
+      - ZOOM=${ZOOM}
     depends_on:
       - db
       - admin
