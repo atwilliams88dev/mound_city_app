@@ -4,12 +4,14 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
+  watch: false,
   entry: {
     home: "./static/scripts/src/home_page_scripts/home.js",
     contact: "./static/scripts/src/contact_page_scripts/contact.js",
     about: "./static/scripts/src/about_page_scripts/about.js",
     blog: "./static/scripts/src/blog_page_scripts/blog.js",
     developer: "./static/scripts/src/developer_page_scripts/developer.js",
+    inputmask: "./static/scripts/src/inputmask.js"
   },
   output: {
     path: path.resolve(__dirname, "./static/scripts/dist"),

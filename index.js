@@ -7,7 +7,6 @@ const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const bodyParser = require('body-parser')
-
 // APP CONFIG
 const app = express();
 let PORT = process.env.EXPRESS_PORT || 3000;

@@ -1,7 +1,16 @@
 const css = require("../../../styles/main.css");
-const { toggleNav } = require("../togglenav");
-const { activeMenu } = require("../activeMenu");
+import { toggleNav } from "../togglenav";
+import { activeMenu } from "../activeMenu";
+import {createMasks} from "./createMasks"
+import { toggleFields } from "./toggleFields";
+
 window.addEventListener("DOMContentLoaded", (e) => {
+  // COMMON NAV
   toggleNav();
   activeMenu("Contact");
+  // PRINTS INPUT MASKS FOR PHONE AND EMAIL FIELDS
+  createMasks()
+  // HANDLE SHOWING FIELD BASED ON HIRE / JOIN
+  toggleFields()
+
 });

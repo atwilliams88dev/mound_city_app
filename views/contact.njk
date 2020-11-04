@@ -1,8 +1,8 @@
 {% from "./components/header.njk" import header %}
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
   {{ header(
-    scripts=["../static/scripts/dist/contact.js"],
+    scripts=["../static/scripts/dist/inputmask.js","../static/scripts/dist/contact.js"],
     title="Mound City Development | Contact Us",
     description="Contact Mound City Development  | We would love to hear from you",
     links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
@@ -14,131 +14,17 @@
       {% include "./components/nav.njk" %}
       <section class=" bg-off h-screen pb-40">
         <div class=" container mx-auto">
-              <div class="flex flex-col text-center">
-                <div class=" mt-12 mb-12 mx-auto">
-                  <h1 class="mb-4 text-4xl text-primary">Contact</h1>
-                  <div class="text-primary text-sm">
-                    Want to work with us or for us? 
-                  </div>
-                  <div class="text-primary text-sm">
-                    Drop us a messages.
-                  </div>
-                </div>
-              </div>
-              <form action="/contact" method="POST" style="min-height:625px" class="bg-white rounded-2xl relative p-4 shadow-xl">
-              <div class="flex flex-col lg:flex-row ">
-                <div style="min-height:625px" class=" w-full lg:w-2/5 bg-contact bg-no-repeat p-8 min-h-full">
-                  <h2 class=" text-3xl text-white mb-4"> 
-                  Contact <span class="text-secondary">Info</span>rmation
-                  </h2>
-                  <div class="text-white opacity-75">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur alias facere, sit nulla hic consequuntur repellat doloribus
-                  </div>
-                  <ul class="mt-12">
-                    <li > 
-                    <a class="flex text-white mb-8" href="tel:'{{phone}}'">
-                      <svg class="mr-4" width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="10" fill="#1A2471"/>
-                        <path d="M5 7C5 6.73478 5.10536 6.48043 5.29289 6.29289C5.48043 6.10536 5.73478 6 6 6H7.64C7.7449 6.00008 7.84711 6.03315 7.93218 6.09452C8.01724 6.1559 8.08085 6.24248 8.114 6.342L8.863 8.5885C8.90095 8.70267 8.89646 8.82669 8.85036 8.93782C8.80425 9.04895 8.71963 9.13973 8.612 9.1935L7.4835 9.7585C8.03666 10.9828 9.01723 11.9633 10.2415 12.5165L10.8065 11.388C10.8603 11.2804 10.9511 11.1957 11.0622 11.1496C11.1733 11.1035 11.2973 11.099 11.4115 11.137L13.658 11.886C13.7576 11.9192 13.8442 11.9829 13.9056 12.068C13.967 12.1532 14 12.2555 14 12.3605V14C14 14.2652 13.8946 14.5196 13.7071 14.7071C13.5196 14.8946 13.2652 15 13 15H12.5C8.358 15 5 11.642 5 7.5V7Z" stroke="#079AAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    {{phone}}
-                    </a>
-                    </li>
-                    <li> 
-                    <a  class="flex text-white mb-8" href="mailto:'{{email}}'">
-                    <svg class="mr-4" width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g id="Group 75">
-                        <g id="Group 70">
-                        <circle id="Ellipse 13" cx="10" cy="10" r="10" fill="#1A2471"/>
-                        <path id="Vector" d="M14 10.5H12.707C12.5744 10.5 12.4472 10.5527 12.3535 10.6465L11.1465 11.8535C11.0528 11.9473 10.9256 12 10.793 12H9.207C9.0744 12 8.94725 11.9473 8.8535 11.8535L7.6465 10.6465C7.55275 10.5527 7.4256 10.5 7.293 10.5H6M14 10.5V7C14 6.73478 13.8946 6.48043 13.7071 6.29289C13.5196 6.10536 13.2652 6 13 6H7C6.73478 6 6.48043 6.10536 6.29289 6.29289C6.10536 6.48043 6 6.73478 6 7V10.5H14ZM14 10.5V13C14 13.2652 13.8946 13.5196 13.7071 13.7071C13.5196 13.8946 13.2652 14 13 14H7C6.73478 14 6.48043 13.8946 6.29289 13.7071C6.10536 13.5196 6 13.2652 6 13V10.5H14Z" stroke="#02A4BD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                      </g>
-                    </svg>
-
-                    {{email}}
-                    </a>
-                    </li>
-                    <li class="flex text-white mb-8"> 
-                    <svg class="mr-4" width="32" height="32" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <g id="Group 76">
-                          <g id="Group 69">
-                          <circle id="Ellipse 13" cx="10" cy="10" r="10" fill="#1A2471"/>
-                          <g id="Frame" clip-path="url(#clip0)">
-                          <path id="Vector" d="M10.6667 6.60417V9.125M6.54166 14.625V12.7917V14.625ZM6.54166 12.7917V7.29167C6.54166 7.04855 6.63823 6.81539 6.81014 6.64349C6.98205 6.47158 7.21521 6.375 7.45832 6.375H10.4375L10.8958 6.83333H14.7917L13.4167 9.58333L14.7917 12.3333H10.8958L10.4375 11.875H7.45832C7.21521 11.875 6.98205 11.9716 6.81014 12.1435C6.63823 12.3154 6.54166 12.5486 6.54166 12.7917V12.7917Z" stroke="#079AAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          </g>
-                        </g>
-                      </g>
-                      <defs>
-                      <clipPath id="clip0">
-                      <rect width="11" height="11" fill="white" transform="translate(5.16666 5)"/>
-                      </clipPath>
-                      </defs>
-                    </svg>
-
-                    zoom.moundCity.io 
-                    </li>
-                  </ul>
-                </div>
+              {% include "./components/contact_heading.njk" %}
+              <div  style="min-height:625px" class="bg-white rounded-2xl relative p-4 shadow-xl">
+                <div class="flex flex-col lg:flex-row ">
+                {% include "./components/contact_info.njk" %}
                 <div class=" w-full lg:w-3/5">
-                <div>
-                  <h2 class="text-2xl  ml-8 text-primary mt-6 mb-8">Who Are You?</h2>
-                  <div class="flex flex-col lg:flex-row ml-8">
-                    <input type="hidden" name="_csrf" value="{{csrfToken}}">
-                    <div class="flex flex-col w-1/2">
-                      <label class=" text-sm  text-gray-600" for="firstName">First Name</label>
-                      <input name="firstName" style="width:250px" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="firstName" type="text" value='{{user_firstName}}'>
-                    </div>
-                    <div class="flex flex-col w-1/2">
-                      <label class=" text-sm  text-gray-600" for="lastName">Last Name</label>
-                      <input name="lastName" style="width:250px" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="lastName" type="text" value='{{user_lastName}}'/>
-                    </div>
-                  </div>
-                  <div class="flex flex-col lg:flex-row ml-8 mt-8">
-                    <div class="flex flex-col w-1/2">
-                      <label class=" text-sm  text-gray-600" for="email">Email</label>
-                      <input name="email" style="width:250px" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="email" type="text" value='{{user_email}}'/>
-                    </div>
-                  <div class="flex flex-col w-1/2">
-                      <label class=" text-sm  text-gray-600" for="phone">Phone</label>
-                      <input name="phone" style="width:250px" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="phone" type="text" value='{{user_phone}}'/>
-                    </div>
-                  </div>
-                  <h2 class="text-2xl mt-12 ml-8 text-primary mb-4">How Can We Help You?</h2>
-                  <div class="block  ml-8 mb-12">
-                    <div class="text-gray-600 mb-4">I want to...</div>
-                    <div class="mt-2 flex">
-                      <div>
-                        <label class="inline-flex items-center mr-6">
-                          <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="hire" checked='{{hire}}'>
-                          <span class="ml-2">Hire You For a Job</span>
-                        </label>
-                      </div>
-                      <div>
-                        <label class="inline-flex items-center">
-                          <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="join" checked={{'join'}}>
-                          <span class="ml-2">Work With You On a Future Project</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  <label class="block mt-8 ml-8">
-                    <span class="text-sm mb-2 text-gray-600">I'm Interested In</span>
-                    <select class="form-select block border-t-0 border-l-0 shadow-none border-r-0 border-b-1 border rounded-none border-gray-600 mt-1 w-full lg:w-1/3 ">
-                      <option>Option 1</option>
-                      <option>Option 2</option>
-                    </select>
-                  </label>
-                  <button type="submit" style="right:10%; bottom: 10%" class="mr-4 relative lg:absolute mx-auto lg:mx-0 w-full lg:w-auto flex py-4 lg:py-4 px-10 mb-4 text-center lg:text-left rounded border bg-primaryBlue text-white shadow-sm"  type="button"> 
-                    <svg class="w-6 h-6 ml-auto lg:ml-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <span class="ml-2 mr-auto lg:mr-0">Submit</span> 
-                  </button>
-
-                  </div>
-                </div>
+                {% include "./components/contact_form.njk" %}
               </div>
-          </form>
+          </div>
         </div>
-      </section>
+      </div>
+     </section>
     </main>
     {% include "./components/sidebar.njk" %}
   </body>
