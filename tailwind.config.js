@@ -7,12 +7,8 @@ module.exports = {
     purgeLayersByDefault: true,
   },
   purge: {
-    layers: ["utilities"],
-    content: [
-      // Paths to your templates...
-      "./views",
-      // "./static/scripts/dist/bundle.js",
-    ],
+    enabled: false,
+    content: [("./views/**/*.njk", "./views/*.njk", "./views/**/**/*.njk")],
   },
   theme: {
     colors: {
@@ -31,6 +27,12 @@ module.exports = {
       montserrat: ["Montserrat"],
       quicksand: ["Quicksand"],
     },
+    extend: {
+      backgroundImage: (theme) => ({
+        contact: "url('/static/images/contactCardBg.svg')",
+      }),
+    },
   },
   variants: {},
+  plugins: [require('@tailwindcss/custom-forms')]
 };

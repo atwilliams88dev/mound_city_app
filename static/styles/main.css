@@ -4,6 +4,7 @@
 
 body {
     font-size:  16px;
+    background-color: theme('colors.off');
 }
 .text-primary {
     color: theme('colors.primary')

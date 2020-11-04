@@ -1,0 +1,15 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 76">
+<g id="Group 69">
+<circle id="Ellipse 13" cx="10" cy="10" r="10" fill="#1A2471"/>
+<g id="Frame" clip-path="url(#clip0)">
+<path id="Vector" d="M10.6667 6.60417V9.125M6.54166 14.625V12.7917V14.625ZM6.54166 12.7917V7.29167C6.54166 7.04855 6.63823 6.81539 6.81014 6.64349C6.98205 6.47158 7.21521 6.375 7.45832 6.375H10.4375L10.8958 6.83333H14.7917L13.4167 9.58333L14.7917 12.3333H10.8958L10.4375 11.875H7.45832C7.21521 11.875 6.98205 11.9716 6.81014 12.1435C6.63823 12.3154 6.54166 12.5486 6.54166 12.7917V12.7917Z" stroke="#079AAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="11" height="11" fill="white" transform="translate(5.16666 5)"/>
+</clipPath>
+</defs>
+</svg>
