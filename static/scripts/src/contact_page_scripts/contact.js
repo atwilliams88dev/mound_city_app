@@ -3,14 +3,16 @@ import { toggleNav } from "../togglenav";
 import { activeMenu } from "../activeMenu";
 import {createMasks} from "./createMasks"
 import { toggleFields } from "./toggleFields";
+import { hideSubmissionErrors } from "./hideSubmissionErrors";
 
 window.addEventListener("DOMContentLoaded", (e) => {
   // COMMON NAV
   toggleNav();
   activeMenu("Contact");
   // PRINTS INPUT MASKS FOR PHONE AND EMAIL FIELDS
-  createMasks()
+  createMasks();
   // HANDLE SHOWING FIELD BASED ON HIRE / JOIN
-  toggleFields()
-
+  toggleFields();
+  // HIDE ERROR LIST ON CLICK OF X ICON
+  hideSubmissionErrors();
 });

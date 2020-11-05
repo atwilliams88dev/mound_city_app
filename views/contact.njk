@@ -19,7 +19,13 @@
                 <div class="flex flex-col lg:flex-row ">
                 {% include "./components/contact_info.njk" %}
                 <div class=" w-full lg:w-3/5">
-                {% include "./components/contact_form.njk" %}
+                {% if success === true %}
+                  <h1>It Worked!</h1>
+                {# {% elif success === false %}
+                <h1>Oops</h1> #}
+                {% else %}
+                  {% include "./components/contact_form.njk" %}
+                {% endif %}
               </div>
           </div>
         </div>
