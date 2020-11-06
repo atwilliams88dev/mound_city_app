@@ -15,4 +15,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
   toggleFields();
   // HIDE ERROR LIST ON CLICK OF X ICON
   hideSubmissionErrors();
+
+  const showForm = window.location.href.includes("hire") || window.location.href.includes("join");
+  const whoAreYou = document.getElementById("who");
+  if(showForm){
+    whoAreYou.scrollIntoView()
+  }
 });
