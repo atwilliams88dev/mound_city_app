@@ -1,11 +1,21 @@
 @tailwind base;
 @tailwind components;
+
+.input {
+    @apply pt-2 pl-2 pb-2 mt-2  border-b border-primary rounded-none
+}
+.inputError {
+    @apply text-red-700 rounded border-red-700 border-t border-r border-l border-b bg-red-600 bg-opacity-50 text-red-700 font-bold
+}
+
+
 @tailwind utilities;
 
 body {
     font-size:  16px;
     background-color: theme('colors.off');
 }
+
 .text-primary {
     color: theme('colors.primary')
 }

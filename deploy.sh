@@ -6,5 +6,7 @@ git stash save --keep-index --include-untracked
 git pull origin main
 # RESTORE DATA FROM BACKUP
 cp -r /root/app/backup /root/app/mound_city_starter/pgdata 
+#Bring down Apps
+docker-compose down
 # BUILD APP
 npm run build

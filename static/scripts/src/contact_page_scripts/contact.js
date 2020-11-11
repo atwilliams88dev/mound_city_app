@@ -3,7 +3,7 @@ import { toggleNav } from "../togglenav";
 import { activeMenu } from "../activeMenu";
 import {createMasks} from "./createMasks"
 import { toggleFields } from "./toggleFields";
-import { hideSubmissionErrors } from "./hideSubmissionErrors";
+import { removeInputErrors } from "./removeInputErrors";
 
 window.addEventListener("DOMContentLoaded", (e) => {
   // COMMON NAV
@@ -13,12 +13,12 @@ window.addEventListener("DOMContentLoaded", (e) => {
   createMasks();
   // HANDLE SHOWING FIELD BASED ON HIRE / JOIN
   toggleFields();
-  // HIDE ERROR LIST ON CLICK OF X ICON
-  hideSubmissionErrors();
 
-  const showForm = window.location.href.includes("hire") || window.location.href.includes("join");
+  const showForm = window.location.href.includes("hire") || window.location.href.includes("join") || document.querySelector(".inputError");
   const whoAreYou = document.getElementById("who");
   if(showForm){
     whoAreYou.scrollIntoView()
   }
+  // REMOVES ERROR STATES FROM INPUT FIELDS ON KEYDOWN
+  removeInputErrors()
 });

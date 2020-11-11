@@ -1,49 +1,65 @@
 <fieldset class="mt-8 lg:mt-1">
-    {% if errors.length > 0 %}
-    <div id="contactErrorList" class="flex ml-0 lg:ml-8  bg-red-600 text-red-900 border-l-8 p-1 border border-red-900  border-solid justify-between  items-start rounded mb-8 bg-opacity-50">
-        <div class="flex items-start">
-        <svg class="w-6 mr-4 text-red-900 mt-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <ul class=" flex-col">
-            {% for error in errors%}
-                <li class="mt-1 mb-1 font-extrabold">{{error}}</li>
-            {% endfor %}
-        </ul>
-        </div>
-        <div>
-            <button id="closeContactError" type="button" >
-                <svg class="w-8 mt-0 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    {% endif %}
-  
-
     <legend id="who" class="text-2xl ml-0 lg:ml-8 text-primary mt-6 mb-6">Who Are You?</legend>
     <div class="flex flex-col lg:flex-row ml-0 lg:ml-8">
         <input type="hidden" name="_csrf" value="{{csrfToken}}">
-    <div class="flex flex-col  w-full lg:w-1/2 mb-8 lg:mr-20">
-        <label class=" text-sm  text-gray-600" for="firstName">First Name</label>
-        <input name="firstName" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="firstName" type="text" value='{{user_firstName}}'>
-        
-    </div>
-    <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
-        <label class=" text-sm  text-gray-600" for="lastName">Last Name</label>
-        <input name="lastName" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="lastName" type="text" value='{{user_lastName}}'/>
-    </div>
+        <div class="flex flex-col  w-full lg:w-1/2 mb-8 lg:mr-20">
+        <label class="text-sm  text-gray-600  {% for error in errors %}{% if error === 'Your first name is required' %} text-red-700 font-bold {% endif %}{% endfor %}  " for="firstName">First Name <span class=" text-xs">*</span></label>
+        <input 
+            name="firstName" 
+            class="input {% for error in errors %}{% if error === 'Your first name is required' %} inputError focus:outline-none{% endif %}{% endfor %}" 
+            id="firstName" 
+            type="text" 
+            value='{{user_firstName}}'>
+            {% for error in errors%}
+                {% if error === "Your first name is required" %}
+                <span class="mt-1 mb-1 text-red-700 text-xs font-bold">{{error}}</span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
+        <label class="text-sm  text-gray-600 {% for error in errors %}{% if error === 'Your last name is required' %}  text-red-700 font-bold {% endif %}{% endfor %}  " for="lastName">Last Name <span class=" text-xs">*</span></label>
+        <input 
+            name="lastName" 
+            class="input {% for error in errors %}{% if error === 'Your last name is required' %} inputError focus:outline-none{% endif %}{% endfor %}" 
+            id="lastName" 
+            type="text" 
+            value='{{user_lastName}}'/>
+
+            {% for error in errors%}
+                {% if error === "Your last name is required" %}
+                <span class="mt-1 mb-1  text-red-700 text-xs font-bold">{{error}}</span>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
     <div class="flex flex-col lg:flex-row ml-0 lg:ml-8">
-    <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
-        <label class=" text-sm  text-gray-600" for="email">Email</label>
-        <input name="email" class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="email" type="text" value='{{user_email}}'/>
-    </div>
-    <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
-        <label class=" text-sm  text-gray-600" for="phone">Phone</label>
-        <input name="phone"  class="pt-2 pl-2 pb-2 mt-2 border-b border-gray-600" id="phone" type="text" value='{{user_phone}}'/>
-    </div>
+        <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
+        <label class="text-sm  text-gray-600 {% for error in errors %}{% if error === 'email is not valid' %} text-red-700 font-bold {% endif %}{% endfor %}" for="email">Email <span class=" text-xs">*</span> </label>
+        <input 
+            name="email" 
+            class="input {% for error in errors %}{% if error === 'email is not valid' %} inputError focus:outline-none{% endif %}{% endfor %}" 
+            id="email" 
+            type="text" 
+            value='{{user_email}}'/>
+            {% for error in errors%}
+                {% if error === "email is not valid" %}
+                <span class="mt-1 mb-1 text-red-700  text-xs font-bold">{{error}}</span>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="flex flex-col w-full lg:w-1/2 mb-8 lg:mr-20">
+            <label class="text-sm  text-gray-600 {% for error in errors %}{% if error === 'A phone is required' %} text-red-700 font-bold {% endif %}{% endfor %}" for="phone">Phone <span class=" text-xs">*</span></label>
+            <input 
+                name="phone"  
+                class="input {% for error in errors %}{% if error === 'A phone is required' %} inputError focus:outline-none{% endif %}{% endfor %}" 
+                id="phone" 
+                type="text" 
+                value='{{user_phone}}'/>
+            {% for error in errors%}
+                {% if error === "A phone is required" %}
+                <span class="mt-1 mb-1 text-red-700 text-xs font-bold">{{error}}</span>
+                {% endif %}
+            {% endfor %} 
+        </div>
     </div>
 </fieldset>

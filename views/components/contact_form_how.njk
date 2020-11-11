@@ -6,9 +6,9 @@
         <div>
             <label class="inline-flex items-center mr-6">
             {% if hire %}
-            <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="hire" checked>
+            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="hire" checked>
             {% else %}
-            <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="hire">
+            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="hire">
             {% endif %}
             <span class="ml-2">Hire You For a Job</span>
             </label>
@@ -16,20 +16,56 @@
         <div>
             <label class="inline-flex items-center">
             {% if join %}
-            <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="join" checked>
+            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="join" checked>
             {% else %}
-            <input type="radio" class="form-radio h-6 w-6 text-primary" name="i_want_to" value="join">
+            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="join">
             {% endif %}
             <span class="ml-2">Work With You On a Future Project</span>
             </label>
         </div>
         </div>
     </div>
-    <label class="block mt-8 ml-0 lg:ml-8">
-        <span class="text-sm mb-2 text-gray-600">I'm Interested In</span>
-        <select class="form-select block border-t-0 border-l-0 shadow-none border-r-0 border-b-1 border rounded-none border-gray-600 mt-1 w-full lg:w-1/3 ">
-        <option>Option 1</option>
-        <option>Option 2</option>
-        </select>
-    </label>
+    
+<div class="block ml-8">
+    <span class="text-gray-700">Which Servcies Are You Interested In?</span>
+    <span>check all that apply</span>
+  <div class="mt-2" id="checkBoxWrapper" data-active="{{services}}">
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" value="Web Development" name="services" class=" w-4 h-4 text-primary form-checkbox">
+        <span class="ml-2">Web Development</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" value="Mobile Development" name="services" class="form-checkbox" >
+        <span class="ml-2">Mobile Development</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" value="Design" name="services" class="form-checkbox">
+        <span class="ml-2">Design</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" value="Automation" name="services"  class="form-checkbox">
+        <span class="ml-2">Automation</span>
+      </label>
+    </div>
+    <div>
+      <label class="inline-flex items-center">
+        <input type="checkbox" value="SEO"  name="services"  class="form-checkbox">
+        <span class="ml-2">SEO</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 </fieldset>
