@@ -1,0 +1,15 @@
+{% block lastName %}
+    <label class="text-sm  text-gray-600 {% for error in errors %}{% if error === 'Your last name is required' %}  text-red-700 font-bold {% endif %}{% endfor %}  " for="lastName">Last Name <span class=" text-xs">*</span></label>
+    <input 
+        name="lastName" 
+        class="input {% for error in errors %}{% if error === 'Your last name is required' %} inputError focus:outline-none{% endif %}{% endfor %}" 
+        id="lastName" 
+        type="text" 
+        value='{{user_lastName}}'/>
+
+        {% for error in errors%}
+            {% if error === "Your last name is required" %}
+            <span class="mt-1 mb-1  text-red-700 text-xs font-bold">{{error}}</span>
+            {% endif %}
+        {% endfor %}
+{% endblock %}

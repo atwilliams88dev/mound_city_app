@@ -14,17 +14,17 @@
       {% include "./components/nav.njk" %}
       <section class=" bg-off h-screen pb-40">
         <div class=" container mx-auto">
-              {% include "./components/contact_heading.njk" %}
+              {% include "./components/contact_form/contact_heading.njk" %}
               <div  style="min-height:625px" class="bg-white rounded-2xl relative p-4 shadow-xl">
                 <div class="flex flex-col lg:flex-row ">
-                {% include "./components/contact_info.njk" %}
+                {% include "./components/contact_form/contact_info.njk" %}
                 <div class=" w-full lg:w-3/5">
                 {% if success === true %}
                   <h1>It Worked!</h1>
                 {# {% elif success === false %}
                 <h1>Oops</h1> #}
                 {% else %}
-                  {% include "./components/contact_form.njk" %}
+                  {% include "./components/contact_form/contact_form.njk" %}
                 {% endif %}
               </div>
           </div>
