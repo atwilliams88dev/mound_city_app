@@ -18,9 +18,18 @@
               <div  style="min-height:625px" class="bg-white rounded-2xl relative p-4 shadow-xl">
                 <div class="flex flex-col lg:flex-row ">
                 {% include "./components/contact_form/contact_info.njk" %}
-                <div class=" w-full lg:w-3/5">
+                <div class=" w-full lg:w-3/5 flex-col ">
                 {% if success === true %}
-                  <h1>It Worked!</h1>
+                  <div class="items-center justify-center text-center">
+                    {% include "./svg/celebrate.njk" %}
+
+                    <div class=" text-4xl mb-4 text-primary font-bold">
+                      Thanks for Reaching Out!
+                    </div>
+                    <div class="text-primary text-xl lg:text-2xl mb-8 lg:mb-0">
+                      We will be reaching out to you <br/> as soon as we can.
+                    </div>
+                  </div>
                 {# {% elif success === false %}
                 <h1>Oops</h1> #}
                 {% else %}
