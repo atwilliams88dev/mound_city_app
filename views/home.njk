@@ -2,7 +2,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
   {{ header(
-    scripts=["https://moundcity.nyc3.cdn.digitaloceanspaces.com/moundcity/dist/home.js"],
+    scripts=["../static/scripts/dist/home.js"],
     title="Mound City Development",
     description="Mound City Development is a software development company. We work with some of the very best software engineers. 
     Most of our engineers work with Mound City as a side hustle. This helps keep over head low and quality high.",
@@ -21,7 +21,7 @@
                   We work with very talented folks. Please reach out to us if you are looking for something else in the development world.
               </div>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                <div id="webAndMobileCard" class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
                   <div class="text-2xl text-primary mb-2"> Web and Mobile Apps</div>
                   <img style="width: 100%; max-height:165px" class=" mx-auto m-2" src="../static/images/webAndMobile.svg">
                   <div class="font-light text-primary border-l-4 border-secondary pl-4 max-w-lg mt-4">Web applications can be as simple as a <span class=" font-bold">small business website </span> and as complex as a cloud based, cross platform, (<span class="font-bold">IOS</span> & <span class="font-bold">Android</span>) web application. We are here to help you with whatever you need on the web.</div>
@@ -34,7 +34,7 @@
                     </button>
                   </div>
                 </div>
-                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                <div id="webDesignCard"class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
                   <div class="text-2xl mb-2 text-primary"> Web Design</div>
                   <img style="width: 80%; max-height:165px" class=" mx-auto m-2 mt-0" src="../static/images/webDesign.svg">
                   <div class="font-light text-primary border-l-4 border-secondary pl-4 max-w-lg mt-4" >Web design is more than making a website look pretty. A design needs to work for your business. <span class=" font-bold">We build and design accessible apps for everyone, no matter their skill level or capabilities. </span></div>
@@ -47,7 +47,7 @@
                     </button>
                   </div>
                 </div>                
-                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                <div id="contentCreationCard" class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
                   <div class="text-2xl mb-2 text-primary">Content Creation</div>
                   <img style="width: 65%; max-height:165px" class=" mx-auto m-2 mt-0" src="../static/images/content.svg">
                   <div class="font-light text-primary border-l-4 border-secondary pl-4 max-w-lg mt-4"><span class="font-bold"> Content is King!</span> Writing good content is one of the most important pieces to a great app or webiste. Unfortunatley, its often overlooked.</div>
@@ -60,7 +60,7 @@
                     </button>
                   </div>
                 </div>  
-                <div class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
+                <div id="seoCard" class=" bg-off rounded relative shadow-lg p-8 flex flex-col">
                   <div class="text-2xl mb-2 text-primary">SEO</div>
                   <img style="width: 90%; max-height:165px" class=" mx-auto m-2 mt-0" src="../static/images/seo.svg">
                   <div class="font-light text-primary border-l-4 border-secondary pl-4">Search engine optimization <span class="font-bold"> (SEO) often offers the very best ROI.</span>

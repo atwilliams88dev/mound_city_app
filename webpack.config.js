@@ -1,10 +1,11 @@
 const path = require("path");
 
-// If a single file grows too large consider code splitting
-
 module.exports = {
   mode: "production",
-  watch: false,
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/
+  },
   entry: {
     home: "./static/scripts/src/home_page_scripts/home.js",
     contact: "./static/scripts/src/contact_page_scripts/contact.js",
@@ -18,12 +19,6 @@ module.exports = {
     filename: "[name].js",
   },
   plugins: [],
-
-  // entry: "./static/scripts/src/contact_page_scripts/contact.js",
-  // output: {
-  //   path: path.resolve(__dirname, "./static/scripts/dist/contact"),
-  //   filename: "contact.js",
-  // },
   module: {
     rules: [
       {
@@ -41,7 +36,6 @@ module.exports = {
           },
         ],
       },
-
     ],
   },
 };

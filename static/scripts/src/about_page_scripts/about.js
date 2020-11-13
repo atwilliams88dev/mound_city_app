@@ -4,4 +4,5 @@ const { activeMenu } = require("../activeMenu");
 window.addEventListener("DOMContentLoaded", (e) => {
   toggleNav();
   activeMenu("About");
+  console.log("hello world")
 });
