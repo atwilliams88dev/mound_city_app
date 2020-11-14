@@ -31,6 +31,6 @@ home_router.get("/", async (req, res) => {
 
   //   res.status(500).render("500.njk");
   // }
-  res.render("home.njk", { route: "/" });
+  res.render("home.njk", { phoneNumber: process.env.PHONE_NUMBER });
 });
 module.exports = home_router;

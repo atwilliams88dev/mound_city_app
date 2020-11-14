@@ -1,4 +1,6 @@
 {% from "./components/header.njk" import header %}
+{% from "./macros/footer.njk" import footer%}
+
 <!doctype html>
 <html class="no-js" lang="en">
   {{ header(
@@ -81,5 +83,6 @@
       </section>
     </main>
     {% include "./components/sidebar.njk" %}
+    {{ footer(phoneNumber)}}
   </body>
 </html>
