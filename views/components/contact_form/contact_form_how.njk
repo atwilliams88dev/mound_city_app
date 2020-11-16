@@ -1,67 +1,37 @@
 <fieldset class="lg:mt-8">
     <legend class="text-2xl ml-0 lg:ml-8 text-primary mb-6">How Can We Help You?</legend>
-    <div class="block  ml-0 lg:ml-8 mb-12">
-        <span class="text-gray-600 mb-4">I want to...</span>
+    <div class="block  ml-0 lg:ml-8 mb-12 lg:mb-6">
+        <span class="text-gray-900 font-semibold mb-4">I want to...</span>
         <div id="goalRadioGroup" class="mt-2 flex">
         <div>
-            <label class="inline-flex items-center mr-6">
+            <label class="inline-flex items-center mr-6 cursor-pointer">
             {% if hire %}
-            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="hire" checked>
+            <input type="radio" class="form-radio h-6 lg:h-4 w-6 lg:w-4  cursor-pointer text-primary" name="i_want_to" value="hire" checked>
             {% else %}
-            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="hire">
+            <input type="radio" class="form-radio h-6 lg:h-4 w-6 lg:w-4 cursor-pointer text-primary" name="i_want_to" value="hire">
             {% endif %}
             <span class="ml-2">Hire You For a Job</span>
             </label>
         </div>
         <div>
-            <label class="inline-flex items-center">
+            <label class="inline-flex items-center cursor-pointer">
             {% if join %}
-            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="join" checked>
+            <input type="radio" class="form-radio h-6 lg:h-4 w-6 lg:w-4 cursor-pointer text-primary" name="i_want_to" value="join" checked>
             {% else %}
-            <input type="radio" class="form-radio h-4 w-4 text-primary" name="i_want_to" value="join">
+            <input type="radio" class="form-radio h-6 lg:h-4 w-6 lg:w-4 cursor-pointer text-primary" name="i_want_to" value="join">
             {% endif %}
             <span class="ml-2">Work With You On a Future Project</span>
             </label>
         </div>
         </div>
     </div>
-    
-<div class="block ml-8">
-    <span class="text-gray-700">Which Servcies Are You Interested In?</span>
-    <span>check all that apply</span>
-  <div class="mt-2" id="checkBoxWrapper" data-active="{{services}}">
-    <div>
-      <label class="inline-flex items-center">
-        <input type="checkbox" value="Web Development" name="services" class=" w-4 h-4 text-primary form-checkbox">
-        <span class="ml-2">Web Development</span>
-      </label>
+    <div id="services" class="{% if hire %} inherit {% else %} hidden {% endif %}">
+      {% include "./contact_form_services.njk" %}
     </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input type="checkbox" value="Mobile Development" name="services" class="form-checkbox" >
-        <span class="ml-2">Mobile Development</span>
-      </label>
+    <div id="skills" class="{% if join %} inherit {% else %} hidden {% endif %} ">
+      {% include "./contact_form_skills.njk" %}
     </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input type="checkbox" value="Design" name="services" class="form-checkbox">
-        <span class="ml-2">Design</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input type="checkbox" value="Automation" name="services"  class="form-checkbox">
-        <span class="ml-2">Automation</span>
-      </label>
-    </div>
-    <div>
-      <label class="inline-flex items-center">
-        <input type="checkbox" value="SEO"  name="services"  class="form-checkbox">
-        <span class="ml-2">SEO</span>
-      </label>
-    </div>
-  </div>
-</div>
+
 
 
 

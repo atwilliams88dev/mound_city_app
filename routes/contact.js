@@ -28,6 +28,7 @@ contact_router.get("/contact", async (req, res) => {
     join: join || false,
     hire: hire || false,
     services: [],
+    skills:[],
     csrfToken: req.csrfToken()
   });
 });
@@ -51,7 +52,8 @@ contact_router.post("/contact",
 ,async (req, res) => {
   console.log(req.body)
   const errors =  validationResult(req);
-  const {firstName, lastName, phone, email, i_want_to, services } = req.body;
+  const {firstName, lastName, phone, email, i_want_to, services, skills } = req.body;
+  console.log("services " + services)
   errors.array().map(err=>console.log(err))
   if (!errors.isEmpty()) {
     return res.render("contact.njk", {
@@ -64,14 +66,15 @@ contact_router.post("/contact",
       join: i_want_to === "join" || false,
       hire: i_want_to === "hire" || false,
       success: false,
-      services: services,
+      services: services || [],
+      skills: skills || [],
       errors: errors.array().map(err=>err.msg !== "Invalid value" ? err.msg : null).filter(val=>val),
       csrfToken: req.csrfToken()
 
     });
   }
   client.messages.create({
-     body: `new request from moundcity.io - I want to ${i_want_to} you! for ${services} |  ${lastName}, ${firstName} - ${email} ${phone}`,
+     body: `new request from moundcity.io - I want to ${i_want_to} you! for ${services ? services : skills} |  ${lastName}, ${firstName} - ${email} ${phone}`,
      from: twilioNumber,
      to: `+1${process.env.PHONE_NUMBER.replace(" ","")}`
    })
@@ -100,7 +103,8 @@ contact_router.post("/contact",
       join: false,
       hire: false,
       success: false,
-      services: services,
+      services: services || [],
+      skills: skills || [],
       errors: [{msg: "something weirds going on... try again or just email or call us"}],
       csrfToken: req.csrfToken()
     });

@@ -9,18 +9,15 @@ export function toggleFields(){
       }
       return false
     }
-    function showElm (selector) {
-        const hiddenElm = document.querySelector(selector);
-        hiddenElm.classList.remove("hidden")
-    }
-    function hideElm (selector) {
-        const visibleElm = document.querySelector(selector);
-        visibleElm.classList.add("hidden")
-    }
     hireElm.addEventListener("click", e=> {
       if(isChecked(e)){
-        
+        document.querySelector("#services").classList.remove("hidden")
+        document.querySelector("#skills").classList.add("hidden")
       }
     })
-    joinElm.addEventListener("click", e=> isChecked(e))
+    joinElm.addEventListener("click", e=>{
+      isChecked(e)
+      document.querySelector("#skills").classList.remove("hidden")
+      document.querySelector("#services").classList.add("hidden")
+    })
 }
