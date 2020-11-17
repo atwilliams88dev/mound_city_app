@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 542 121.22">
+  <defs>
+    <style>
+      .cls-1{fill:#270a49}
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path class="cls-1" d="M146.55 11.09v85h-129v-85h129m0-4h-129a4 4 0 00-4 4v85a4 4 0 004 4h129a4 4 0 004-4v-85a4 4 0 00-4-4z"/>
+      <path class="cls-1" d="M151.7 3.48a2.39 2.39 0 012.38 2.38v95.89a2.39 2.39 0 01-2.38 2.38H12.09a2.38 2.38 0 01-2.38-2.38V5.86a2.38 2.38 0 012.38-2.38H151.7m0-2H12.09a4.38 4.38 0 00-4.38 4.38v95.89a4.38 4.38 0 004.38 4.38H151.7a4.38 4.38 0 004.38-4.38V5.86a4.38 4.38 0 00-4.38-4.38z"/>
+      <path d="M2 105.16h158.52v1.69a8 8 0 01-8 8H10a8 8 0 01-8-8v-1.69h0z" stroke-linejoin="round" fill="none" stroke="#270a49" stroke-width="4"/>
+      <path stroke-linecap="round" stroke-miterlimit="10" fill="none" stroke="#270a49" stroke-width="4" d="M71.11 106.13h22.83"/>
+      <path d="M59.75 73l18.71 10.66a9 9 0 008.92 0L106.09 73a9 9 0 004.54-7.82V44a9 9 0 00-4.54-7.81L87.38 25.55a9 9 0 00-8.92 0L59.75 36.22A9 9 0 0055.21 44v21.17A9 9 0 0059.75 73z" stroke="#fff" stroke-width="6" fill="#260b49" stroke-linecap="round" stroke-miterlimit="10"/>
+      <text transform="matrix(.87 0 0 1 211.02 51)" font-size="60" font-family="Montserrat-Bold,Montserrat" font-weight="700" fill="#260b49">
+        Mou<tspan x="137.82" y="0" letter-spacing=".01em">n</tspan><tspan x="179.64" y="0">d Ci</tspan><tspan x="300.17" y="0" letter-spacing="-.01em">t</tspan><tspan x="325.68" y="0">y </tspan><tspan font-size="48" font-family="Montserrat-Medium,Montserrat" font-weight="500"><tspan x="0" y="57.6">D</tspan><tspan x="39.65" y="57.6" letter-spacing="-.01em">e</tspan><tspan x="68.54" y="57.6" letter-spacing="-.01em">v</tspan><tspan x="94.66" y="57.6">elope</tspan><tspan x="230.02" y="57.6" letter-spacing="0">r</tspan><tspan x="249.55" y="57.6">s</tspan></tspan>
+      </text>
+      <text transform="matrix(.98 0 0 1 68.3 62.11)" font-size="18.24" fill="#fff" font-family="Montserrat-ExtraBold,Montserrat" font-weight="800">
+        &lt;/&gt;
+      </text>
+    </g>
+  </g>
+</svg>

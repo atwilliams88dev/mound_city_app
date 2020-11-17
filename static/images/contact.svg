@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 18">
+  <defs>
+    <style>.cls-1,.cls-8{fill:none;}.cls-2{font-size:14px;font-family:Montserrat-Regular, Montserrat;}.cls-2,.cls-6{fill:#270a49;}.cls-3{letter-spacing:-0.02em;}.cls-4{letter-spacing:0em;}.cls-5{letter-spacing:0.01em;}.cls-6,.cls-7,.cls-8{stroke:#f15a24;stroke-miterlimit:10;}.cls-7{fill:#ed1c24;}</style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="contact">
+      <g id="contactLower">
+        <line class="cls-1" x1="18" y1="16" x2="66" y2="16"/>
+        <text id="Contact-2" data-name="Contact" class="cls-2" transform="translate(7.19 14.19)">
+          <tspan class="cls-3">C</tspan>
+          <tspan x="9.74" y="0">ont</tspan>
+          <tspan class="cls-4" x="33.68" y="0">a</tspan>
+          <tspan class="cls-5" x="41.97" y="0">c</tspan>
+          <tspan x="49.94" y="0">t</tspan>
+        </text>
+        <line class="cls-6" y1="0.5" x2="70" y2="0.5"/>
+        <line class="cls-7" x1="69.5" y1="1" x2="69.5" y2="18"/>
+        <line class="cls-8" x1="0.5" y1="1" x2="0.5" y2="18"/>
+        <line class="cls-8" x1="68.5" y1="17.5" x2="68.5" y2="17.5"/>
+        <line class="cls-6" x1="1" y1="17.5" x2="70" y2="17.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

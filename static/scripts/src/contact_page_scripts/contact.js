@@ -42,6 +42,10 @@ window.addEventListener("DOMContentLoaded", (e) => {
   if(showForm){
     whoAreYou.scrollIntoView()
   }
+  gsap.registerPlugin(DrawSVGPlugin);
+
+  gsap.from("line", {duration:.5,stagger: .25, drawSVG: "50% 50%"});
+
   // REMOVES ERROR STATES FROM INPUT FIELDS ON KEYDOWN
   removeInputErrors()
   // 
