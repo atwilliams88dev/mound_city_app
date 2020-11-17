@@ -1,5 +1,5 @@
 {% macro navLinks(links, phoneNumber, direction, showAlways) %}
-    <ul class="{% if showAlways === 'true' %} inherit {% else %}  hidden {% endif %} lg:flex {% if direction === 'column' %} flex-col {% endif %}">
+    <ul class="{% if showAlways === 'true' %} inherit {% else %}  hidden {% endif %} lg:flex {% if direction === 'column' %} flex-col pl-4 {% endif %}">
     {% for link in links  %}
             <li id="{{link.text}}" class="mr-8 text-primary text-base font-regular {% if direction === 'column' %} pb-4 {% endif %}"><a href={{link.ref}}>{{link.text}}</a></li>
     {% endfor %}
