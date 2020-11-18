@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 77.72 70.51">
+  <defs>
+    <style>
+      .cls-1,.cls-2{fill:none;stroke-linecap:square;stroke-miterlimit:10;stroke:#270a49;stroke-width:2.63px}.cls-2{stroke:#f95b3d}
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="_15" data-name="15">
+        <path d="M35.65 19.27h17.17M22.09 19.27h6.32M22.09 28.35h24.94M31.78 37.42h6.72M22.09 37.42h3.16M22.09 46.5H38.5M12.78 56.74V1.32h39.14l12.31 12.32.01 1v2.51M64.24 39v18.63a11.57 11.57 0 01-11.56 11.56h-39.9" class="cls-1"/>
+        <path d="M50.83 64.74a11.23 11.23 0 01-2.31-6.84v-.17H1.32v.17a11.29 11.29 0 0011.29 11.29H51M51.92 2.58v11.06H62.4" class="cls-1"/>
+        <path d="M52.21 43.59l-4.66 1.36-.52-.52 1.36-4.66 23.65-23.64 3.82 3.81-23.65 23.65zM47.29 44.69l-1.81 1.81" class="cls-2"/>
+        <path fill="none" stroke="#f95b3d" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.63" d="M75.8 25.9l-6.24 6.24" opacity=".69"/>
+        <path d="M69.04 19.13l3.81 3.82" class="cls-2"/>
+      </g>
+    </g>
+  </g>
+</svg>

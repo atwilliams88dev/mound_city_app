@@ -1,0 +1,21 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87.63 54.14">
+  <defs>
+    <style>
+      .cls-1,.cls-2{fill:none;stroke:#270a49}.cls-1{stroke-linecap:square}.cls-1,.cls-2{stroke-miterlimit:10;stroke-width:2.63px}
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="_16" data-name="16">
+        <path d="M60.58 1.32H1.32v41.56H51.62M60.58 17.92V7.22" class="cls-1"/>
+        <path d="M38.72 45.73v5.31H23.17v-8.16h15.55M17.6 51.04h26.7" class="cls-2"/>
+        <path fill="none" stroke="#f95b3d" stroke-miterlimit="10" stroke-width="2.63" d="M45.31 35.93H2.63"/>
+        <path d="M77.45 52.83H51.62V17.92h25.83v7.24" class="cls-1"/>
+        <path fill="none" stroke="#f95b3d" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.63" d="M63.22 47.7h3.11"/>
+        <path fill="#fff" stroke="#270a49" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.63" d="M73.35 31.1h12.96v21.73H73.35z"/>
+        <path fill="#f95b3d" stroke="#f95b3d" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2.63" d="M79.35 48.32h.97"/>
+      </g>
+    </g>
+  </g>
+</svg>
