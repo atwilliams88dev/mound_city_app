@@ -17,7 +17,7 @@
       {% include "./components/nav.njk" %}
       {% include "./sections/home_page/section_one.njk" %}
       
-      <section class="py-12 bg-off">
+      <section class="py-12 lg:py-24 bg-off">
         <div class="container mx-auto p-4 lg:p-0 ">
               <h2 class="text-4xl text-primary font-bold">Services Offered</h2>
               <div class=" max-w-2xl text-primary mt-2 mb-12 font-light">
@@ -155,6 +155,37 @@
                 </div>
               </div>
               </div>
+        </div>
+      </section>
+      <section class="lg:pb-24 bg-off">
+        <div class="container mx-auto p-4 lg:p-0 ">
+            <div class="flex flex-col justify-items-end items-end">
+                <h2 class="text-4xl text-primary font-bold">Our Favortie Tech</h2>
+                <div class="max-w-2xl text-primary mt-2 mb-12 font-light">
+                  Extra info for our tech savy customers
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 overflow-hidden">
+              <div class="p-4 rounded-xl overflow-hidden bg-white shadow-xl flex flex-col items-center">
+                  <img src="../static/images/react.svg"/>
+                <div class="md:ml-4 text-primary text-2xl md:text-4xl font-thin"> React </div>
+              </div>
+              <div class="p-4 rounded-xl overflow-hidden bg-white shadow-xl flex flex-col items-center">
+                <img src="../static/images/node.svg"/>
+                <div class="md:ml-4 text-primary text-2xl md:text-4xl font-thin"> Node </div>
+              </div>
+              <div class="p-4 rounded-xl overflow-hidden bg-white shadow-xl flex flex-col items-center">
+                <svg style="width:65%; height:85%;" viewBox="0 0 50 31" class="w-auto my-4 h-7 sm:h-8"><path fill-rule="evenodd" clip-rule="evenodd" d="M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.804 0 11.057-3.382 12.758-10.145-2.551 3.382-5.528 4.65-8.93 3.804-1.942-.482-3.33-1.882-4.865-3.431C34.736 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.529-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.804 0 11.057-3.381 12.758-10.145-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.883-4.864-3.432-2.502-2.524-5.398-5.446-11.722-5.446z" fill="#06B6D4"></path></svg>
+                <div class="ml-4 text-primary text-2xl md:text-4xl font-thin"> Tailwind </div>
+              </div>
+              <div class="p-4 rounded-xl overflow-hidden bg-white shadow-xl flex flex-col items-center">
+                <img src="../static/images/greensock.svg"/>
+                <div class="ml-4 text-primary text-2xl md:text-4xl font-thin"> GreenSock </div>
+              </div>
+         
+     
+            </div>
+            
         </div>
       </section>
     </main>
