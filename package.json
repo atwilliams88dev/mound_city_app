@@ -9,7 +9,6 @@
     "start": "node index.js",
     "predev": "webpack --config webpack.config.js",
     "dev": "nodemon index.js -e js,njk",
-    "prebuild": "webpack --config webpack.config.js",
     "build": "docker build -t express-starter .",
     "postbuild": "docker-compose up -d --remove-orphans"
   },
