@@ -1,0 +1,19 @@
+
+{% macro blog_card(image, link, name, description, day, auth )%}
+
+<div class="bg-white rounded-xl shadow-xl relative p-8">
+    <div>
+    <a class="flex" href={{link}}>
+        <img width="24" height="24" src="../static/images/{{image}}" />
+        <h2 class=" ml-2 text-xl text-primary capitalize">{{name}}</h2>
+        </div>
+    </a>
+    <p class=" font-light my-4">
+        {{description}}
+    </p>
+    <div class="flex flex-col items-end">
+        <div data-date="true" >{{day.toISOString().split("T")[0]}}</div>
+        <div>{{auth}}</div>
+    </div>
+</div>
+{% endmacro %}

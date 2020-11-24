@@ -1,0 +1,55 @@
+{% from "./components/header.njk" import header %}
+{% from "./macros/blog_card.njk" import blog_card %}
+<!doctype html>
+<html class="no-js" lang="en">
+   {{ header(
+   scripts=["../static/scripts/dist/blog.js"],
+   title="Mound City Development | Blog",
+   description="Mound City Development  | Blog",
+   links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+   "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
+   )
+   }}
+   <body class="font-montserrat font-medium relative">
+      <main id="mainContainer">
+         {% include "./components/nav.njk" %}
+         <section class=" bg-off h-screen">
+            <div class=" container mx-auto">
+               <div class=" container mx-auto">
+                  <div class="flex flex-col text-center">
+                     <div class=" mt-12 mb-12 mx-auto">
+                        <h1 class="mb-4 text-4xl text-primary font-semibold">{{article.name}}</h1>
+                        <div class="text-primary text-sm">
+                           {{article.description}}                   
+                        </div>
+                        <div class="text-primary text-sm">
+                           {{article.author}}
+                        </div>
+                     </div>
+                  </div>
+                  <div>
+                  <div class="">
+                    <a href="/blog" class="text-right">
+                      <button class="px-8 py-2 flex border-primary border rounded-xl" >
+                        <svg style="margin: 2px 5px 0 0" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Back
+                      </button>
+                    </a>
+                  </div>
+                     <div class="">
+                        <div class="mx-auto mt-8">
+                           {{ article.content | safe }}
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+  
+         </section>
+      </main>
+      {% include "./components/sidebar.njk" %}
+   </body>
+</html>
