@@ -6,4 +6,4 @@ git pull origin main
 #Bring down Apps
 docker stop mound_city_express_app
 # BUILD APP BUT DONT CHANGE DB OR DB ADMIN
-docker-compose up -d
+npm run build
