@@ -33,9 +33,10 @@
 # Connecting to pg admin on Droplet
 
 <ol>
-    <li>In the browser enter enter the droplet ip address (from DO) with port 5432. example 157.230.179.224:5432</li>
+    <li>In the browser enter enter the droplet ip address (from DO) with port 5454. example 157.230.179.224:5454</li>
     <li>login with credentials from docker compose </li>
     <li>In the droplet run docker ps to get the container id of the running postgres instance </li>
+    //NEXT STEP IS IMPORTANT!!!
     <li>Run docker inspect <dockerContainerId> | grep IPAddress </li>
     <li>Back in the pgadmin page - use the Ip address in the Host name/address</li>
     <li>Port should be 5432</li>

@@ -18,7 +18,7 @@
           <div class=" container mx-auto">
               {% include "./components/blog_heading.njk" %}
               <div>
-                <div class=" grid grid-cols-3 gap-4">
+                <div class=" grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {% for row in rows %}
                   {{ blog_card (
                    image=row.logo,
