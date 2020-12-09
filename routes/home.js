@@ -31,6 +31,16 @@ home_router.get("/", async (req, res) => {
 
   //   res.status(500).render("500.njk");
   // }
-  res.render("home.njk", { phoneNumber: process.env.PHONE_NUMBER });
+  res.render("home.njk", {
+     phoneNumber: process.env.PHONE_NUMBER, 
+     elevatorPitch: process.env.ELEVATOR_PITCH, 
+     elevatorPitchExpanded: process.env.ELEVATOR_PITCH_EXPANDED,
+     applicationDevelopment: process.env.APPLICATION_DEVELOPMENT,
+     contentCreation: process.env.CONTENT_CREATION,
+     brainStorming: process.env.BRAIN_STORMING,
+     appDesign: process.env.APP_DESIGN,
+     animation: process.env.ANIMATION,
+     videography: process.env.VIDEOGRAPHY
+    });
 });
 module.exports = home_router;
