@@ -1,6 +1,7 @@
 const Router = require("express-promise-router");
 const db = require("../db");
 const logger = require("../logger");
+const homeContent = require("../content/home");
 // create a new express-promise-router
 // this has the same API as the normal express router except
 // it allows you to use async functions as route handlers
@@ -32,15 +33,15 @@ home_router.get("/", async (req, res) => {
   //   res.status(500).render("500.njk");
   // }
   res.render("home.njk", {
-     phoneNumber: process.env.PHONE_NUMBER, 
-     elevatorPitch: process.env.ELEVATOR_PITCH, 
-     elevatorPitchExpanded: process.env.ELEVATOR_PITCH_EXPANDED,
-     applicationDevelopment: process.env.APPLICATION_DEVELOPMENT,
-     contentCreation: process.env.CONTENT_CREATION,
-     brainStorming: process.env.BRAIN_STORMING,
-     appDesign: process.env.APP_DESIGN,
-     animation: process.env.ANIMATION,
-     videography: process.env.VIDEOGRAPHY
-    });
+    phoneNumber: homeContent.PHONE_NUMBER,
+    elevatorPitch: homeContent.ELEVATOR_PITCH,
+    elevatorPitchExpanded: homeContent.ELEVATOR_PITCH_EXPANDED,
+    applicationDevelopment: homeContent.APPLICATION_DEVELOPMENT,
+    contentCreation: homeContent.CONTENT_CREATION,
+    brainStorming: homeContent.BRAIN_STORMING,
+    appDesign: homeContent.APP_DESIGN,
+    animation: homeContent.ANIMATION,
+    videography: homeContent.VIDEOGRAPHY,
+  });
 });
 module.exports = home_router;
