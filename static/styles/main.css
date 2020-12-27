@@ -62,6 +62,19 @@ a:focus {
 .fade-out {
     animation: fade-out 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.slideIn{
+    animation: slide-in 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 #learnMore {
     transform: translateY(100px);
     opacity: 0
