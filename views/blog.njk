@@ -13,11 +13,11 @@
   <body class="font-montserrat font-medium relative">
     <main id="mainContainer">
       {% include "./components/nav.njk" %}
-      <section class=" bg-off h-screen slideIn">
+      <section class=" bg-off h-screen ">
         <div class=" container mx-auto">
           <div class=" container mx-auto">
               {% include "./components/blog_heading.njk" %}
-              <div>
+              <div class="slideIn">
                 <div class=" grid grid-cols-1 lg:grid-cols-3 gap-4">
                 {% for row in rows %}
                   {{ blog_card (
