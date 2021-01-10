@@ -1,34 +1,10 @@
-{% from "../macros/navLinks.njk" import navLinks %}
-
-{% block nav %}
-<div class=" bg-off w-screen pt-2 sm:pl-2 pr-2 ">
-    <nav class="flex justify-between sm:pt-4 items-center mx-auto container">
-
-        <div class="flex">
-            {% include "./logo.njk"%}
-        </div>
-        {% include "./hamburger.njk" %}
-        {{ navLinks (
-            [
-                {
-                    ref: "/contact",
-                    text: "Contact"
-                },
-                {
-                    ref: "/about",
-                    text: "About"
-                },
-                {
-                    ref: "/blog",
-                    text: "Blog"
-                },
-                {
-                    ref: "/",
-                    text: "Home"
-                }
-            ]
-            ,"618-267-9893")
-        }}
-    </nav>
+{% from "../macros/navLinks.njk" import navLinks %} {% block nav %}
+<div class="bg-off w-screen pt-2 sm:pl-2 pr-2">
+  <nav class="flex justify-between sm:pt-4 items-center mx-auto container">
+    <div class="flex">{% include "./logo.njk"%}</div>
+    {% include "./hamburger.njk" %} {{ navLinks ( [ { ref: "/contact", text:
+    "Contact" }, { ref: "/about", text: "About" }, { ref: "/blog", text: "Blog"
+    }, { ref: "/", text: "Home" } ] ,"618-267-9893") }}
+  </nav>
 </div>
 {% endblock %}

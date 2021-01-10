@@ -1,15 +1,16 @@
-
 {% block firstName %}
-    <label class="text-sm  text-gray-600  {% for error in errors %}{% if error === 'Your first name is required' %} text-red-700 font-bold {% endif %}{% endfor %}  " for="firstName">First Name <span class=" text-xs">*</span></label>
-    <input 
-    name="firstName" 
-    class="input {% for error in errors %}{% if error === 'Your first name is required' %} inputError focus:outline-none{% endif %}{% endfor %}" 
-    id="firstName" 
-    type="text" 
-    value='{{user_firstName}}'>
-    {% for error in errors%}
-        {% if error === "Your first name is required" %}
-        <span class="mt-1 mb-1 text-red-700 text-xs font-bold">{{error}}</span>
-        {% endif %}
-    {% endfor %}
-{% endblock %}
+<label
+  class="text-sm text-gray-600 {% for error in errors %}{% if error === 'Your first name is required' %} text-red-700 font-bold {% endif %}{% endfor %}"
+  for="firstName"
+  >First Name <span class="text-xs">*</span></label
+>
+<input
+  name="firstName"
+  class="input {% for error in errors %}{% if error === 'Your first name is required' %} inputError focus:outline-none{% endif %}{% endfor %}"
+  id="firstName"
+  type="text"
+  value="{{user_firstName}}"
+/>
+{% for error in errors%} {% if error === "Your first name is required" %}
+<span class="mt-1 mb-1 text-red-700 text-xs font-bold">{{error}}</span>
+{% endif %} {% endfor %} {% endblock %}

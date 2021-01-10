@@ -1,24 +1,24 @@
 {% from "./components/header.njk" import header %}
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-  {{ header(
-    scripts=["../static/scripts/dist/developer.js"],
-    title="Mound City Development | Developers",
-    description="Mound City Development  | Developers",
-    links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
-    "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
-    )
-  }}
+  {{ header( scripts=["../static/scripts/dist/developer.js"], title="Mound City
+  Development | Developers", description="Mound City Development | Developers",
+  links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+  "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
+  ) }}
   <body class="font-montserrat font-medium relative">
     <main id="mainContainer">
       {% include "./components/nav.njk" %}
-      <section class=" bg-off h-screen">
-        <div class=" container mx-auto">
-          <div class=" container mx-auto">
-              {% include "./components/developers_heading.njk" %}
-              <div  style="min-height:625px; margin-bottom: 250px" class="bg-white rounded-2xl relative p-4 shadow-xl">
-                hello Devs
-              </div>
+      <section class="bg-off h-screen">
+        <div class="container mx-auto">
+          <div class="container mx-auto">
+            {% include "./components/developers_heading.njk" %}
+            <div
+              style="min-height: 625px; margin-bottom: 250px"
+              class="bg-white rounded-2xl relative p-4 shadow-xl"
+            >
+              hello Devs
+            </div>
           </div>
         </div>
       </section>

@@ -1,45 +1,47 @@
 {% from "./components/header.njk" import header %}
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
   {{ header(
-    scripts=["../static/scripts/dist/inputmask.js","../static/scripts/dist/contact.js"],
-    title="Mound City Development | Contact Us",
-    description="Contact Mound City Development  | We would love to hear from you",
-    links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
-    "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
-    )
-  }}
+  scripts=["../static/scripts/dist/inputmask.js","../static/scripts/dist/contact.js"],
+  title="Mound City Development | Contact Us", description="Contact Mound City
+  Development | We would love to hear from you",
+  links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+  "https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
+  ) }}
   <body class="font-montserrat font-medium relative">
     <main id="mainContainer">
       {% include "./components/nav.njk" %}
-      <section class=" bg-off h-screen pb-40 ">
-        <div class=" container mx-auto">
-              {% include "./components/contact_form/contact_heading.njk" %}
-              <div  style="min-height:625px;" class="bg-white slideIn rounded-2xl relative p-4 shadow-xl">
-                <div class="flex flex-col lg:flex-row ">
-                {% include "./components/contact_form/contact_info.njk" %}
-                <div class=" w-full lg:w-3/5 flex-col ">
+      <section class="bg-off h-screen pb-40">
+        <div class="container mx-auto">
+          {% include "./components/contact_form/contact_heading.njk" %}
+          <div
+            style="min-height: 625px"
+            class="bg-white slideIn rounded-2xl relative p-4 shadow-xl"
+          >
+            <div class="flex flex-col lg:flex-row">
+              {% include "./components/contact_form/contact_info.njk" %}
+              <div class="w-full lg:w-3/5 flex-col">
                 {% if success === true %}
-                  <div class="items-center justify-center text-center">
-                    {% include "./svg/celebrate.njk" %}
+                <div class="items-center justify-center text-center">
+                  {% include "./svg/celebrate.njk" %}
 
-                    <div class=" text-4xl mb-4 text-primary font-bold">
-                      Thanks for Reaching Out!
-                    </div>
-                    <div class="text-primary text-xl lg:text-2xl mb-8 lg:mb-0">
-                      We will be reaching out to you <br/> as soon as we can.
-                    </div>
+                  <div class="text-4xl mb-4 text-primary font-bold">
+                    Thanks for Reaching Out!
                   </div>
+                  <div class="text-primary text-xl lg:text-2xl mb-8 lg:mb-0">
+                    We will be reaching out to you <br />
+                    as soon as we can.
+                  </div>
+                </div>
                 {# {% elif success === false %}
-                <h1>Oops</h1> #}
-                {% else %}
-                  {% include "./components/contact_form/contact_form.njk" %}
-                {% endif %}
+                <h1>Oops</h1>
+                #} {% else %} {% include
+                "./components/contact_form/contact_form.njk" %} {% endif %}
               </div>
+            </div>
           </div>
         </div>
-      </div>
-     </section>
+      </section>
     </main>
     {% include "./components/sidebar.njk" %}
   </body>

@@ -1,14 +1,16 @@
 {% block email %}
-    <label class="text-sm  text-gray-600 {% for error in errors %}{% if error === 'email is not valid' %} text-red-700 font-bold {% endif %}{% endfor %}" for="email">Email <span class=" text-xs">*</span> </label>
-    <input 
-        name="email" 
-        class="input {% for error in errors %}{% if error === 'email is not valid' %} inputError focus:outline-none{% endif %}{% endfor %}" 
-        id="email" 
-        type="text" 
-        value='{{user_email}}'/>
-        {% for error in errors%}
-            {% if error === "email is not valid" %}
-            <span class="mt-1 mb-1 text-red-700  text-xs font-bold">{{error}}</span>
-            {% endif %}
-        {% endfor %}
-{% endblock %}
+<label
+  class="text-sm text-gray-600 {% for error in errors %}{% if error === 'email is not valid' %} text-red-700 font-bold {% endif %}{% endfor %}"
+  for="email"
+  >Email <span class="text-xs">*</span>
+</label>
+<input
+  name="email"
+  class="input {% for error in errors %}{% if error === 'email is not valid' %} inputError focus:outline-none{% endif %}{% endfor %}"
+  id="email"
+  type="text"
+  value="{{user_email}}"
+/>
+{% for error in errors%} {% if error === "email is not valid" %}
+<span class="mt-1 mb-1 text-red-700 text-xs font-bold">{{error}}</span>
+{% endif %} {% endfor %} {% endblock %}

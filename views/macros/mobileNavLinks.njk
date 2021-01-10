@@ -1,7 +1,9 @@
 {% macro mobileNavLinks(links, phoneNumber) %}
-    <ul class=" flex-col items-center justify-items-center">
-        {% for link in links  %}
-                <li class=" text-white text-2xl mb-6 font-semibold"><a value="{{link.ref}}" href={{link.ref}}>{{link.text}}</a></li>
-        {% endfor %}
-    </ul>
+<ul class="flex-col items-center justify-items-center">
+  {% for link in links %}
+  <li class="text-white text-2xl mb-6 font-semibold">
+    <a value="{{link.ref}}" href="{{link.ref}}">{{link.text}}</a>
+  </li>
+  {% endfor %}
+</ul>
 {% endmacro %}
