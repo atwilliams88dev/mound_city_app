@@ -2,7 +2,7 @@
   <div class="container mx-auto">
     <div class="container mx-auto">
       {% include "../../components/blog_heading.njk" %}
-      <div class="slideIn">
+      <div class="fade-in">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {% for row in rows %} {{ blog_card ( image=row.logo, link="/blog/"+
           row.id, name=row.name, description = row.description, day=row.day,

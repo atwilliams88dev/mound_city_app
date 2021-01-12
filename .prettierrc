@@ -1,0 +1,16 @@
+{
+  "overrides": [
+    {
+    "files": ["*.njk"],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.js","*.ts"],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ]
+}

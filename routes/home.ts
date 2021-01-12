@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-const Router = require("express-promise-router");
-const db = require("../db");
-const logger = require("../logger");
+import Router from "express-promise-router";
+// import db from "../db";
+// import logger from "../logger";
 import {
   ELEVATOR_PITCH,
   ELEVATOR_PITCH_EXPANDED,
@@ -15,7 +15,7 @@ import {
 // create a new express-promise-router
 // this has the same API as the normal express router except
 // it allows you to use async functions as route handlers
-const home_router = new Router();
+const home_router = Router();
 // export our router to be mounted by the parent application
 
 home_router.get("/", async (req: Request, res: Response) => {
@@ -66,4 +66,4 @@ home_router.get("/", async (req: Request, res: Response) => {
   };
   res.render("home.njk", HomeContext);
 });
-module.exports = home_router;
+export default home_router;

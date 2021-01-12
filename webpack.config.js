@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   watch: false,
   watchOptions: {
-    ignored: /node_modules/
+    ignored: /node_modules/,
   },
   entry: {
     home: "./static/scripts/src/home_page_scripts/home.js",
@@ -12,7 +12,7 @@ module.exports = {
     about: "./static/scripts/src/about_page_scripts/about.js",
     blog: "./static/scripts/src/blog_page_scripts/blog.js",
     developer: "./static/scripts/src/developer_page_scripts/developer.js",
-    inputmask: "./static/scripts/src/inputmask.js"
+    inputmask: "./static/scripts/src/inputmask.js",
   },
   output: {
     path: path.resolve(__dirname, "./static/scripts/dist"),
@@ -36,6 +36,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(ts)$/i,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
     ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
   },
 };

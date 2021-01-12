@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /*!
  * dist/inputmask.min
  * https://github.com/RobinHerbots/Inputmask

@@ -1,18 +1,20 @@
-{% macro navLinks(links, phoneNumber, direction, showAlways) %}
+{% macro navLinks(links, phoneNumber, direction, showAlways) %} {% from
+"./fancyMenuItem.njk" import fancyMenuItem %}
 <ul
   class="{% if showAlways === 'true' %} inherit {% else %} hidden {% endif %} lg:flex {% if direction === 'column' %} flex-col pl-4 {% endif %}"
 >
   {% for link in links %}
   <li
     id="{{link.text}}"
-    class="mr-8 text-primary text-base font-regular {% if direction === 'column' %} pb-4 {% endif %}"
+    data-active-link="false"
+    class="mainLink mr-6 flex flex-col items-center text-primary text-base font-regular {% if direction === 'column' %} pb-4 {% endif %}"
   >
-    <a href="{{link.ref}}">{{link.text}}</a>
+    {{fancyMenuItem(link.text, link.ref)}}
   </li>
   {% endfor %} {% if phoneNumber %}
   <li
     style="min-width: 140px"
-    class="text-primary text-base font-regular flex items-center"
+    class="text-primary text-base font-regular flex items-center flex-col"
   >
     <a value="{{phoneNumber}}" href="tel:" +{{phoneNumber}}>{{phoneNumber}}</a>
   </li>
