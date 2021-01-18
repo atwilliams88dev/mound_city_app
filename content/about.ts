@@ -1,0 +1,4 @@
+export const content = {
+  p1: `If you have had exposure to the world of coding and development, you are probably aware of the glaring overhead that can silo your project involvements. This overhead serves its purpose to be able to engage, innovate, and deliver for the enterprise customer very well! However, the silo’s that are created from this can stifle the creative and innovative exposure of the developer and, therefore, a more holistic and satisfying experience for the customer.`,
+  p2: `Here at Mound City, we aim to widen our scope of expertise by creating a unique web and mobile app development experience for the customer and the developers that serve them. Bringing over 10 years of enterprise technology experience to the table enables us to lead in process, development, and delivery at a hometown discount rate. We look forward to innovating for...or with you!`,
+};

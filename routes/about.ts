@@ -1,4 +1,5 @@
 import Router from "express-promise-router";
+import { content } from "../content/about";
 // import db from "../db";
 // import logger from "../logger";
 
@@ -9,6 +10,6 @@ const about_router = Router();
 // export our router to be mounted by the parent application
 
 about_router.get("/about", async (req, res) => {
-  res.render("about.njk");
+  res.render("about.njk", { content });
 });
 export default about_router;

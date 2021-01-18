@@ -5,6 +5,7 @@ import { ProcessEnv } from "../types";
 declare let process: {
   env: ProcessEnv;
 };
+import { content } from "../content/contact";
 const env: ProcessEnv = process.env;
 import Router from "express-promise-router";
 // import db from "../db";
@@ -30,6 +31,7 @@ interface RequestWithMiddleWare extends Request {
 contact_router.get("/contact", async (req: RequestWithMiddleWare, res) => {
   const { join, hire } = req.query;
   res.render("contact.njk", {
+    content,
     phone: process.env.PHONE_NUMBER,
     email: process.env.EMAIL,
     user_firstName: "",
