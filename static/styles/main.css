@@ -5,6 +5,9 @@
 .input {
   @apply pt-2 pl-2 pb-2 mt-2  border-b border-primary rounded-none;
 }
+.halfLinkCard {
+  @apply p-4 rounded-xl overflow-hidden  shadow-xl flex flex-col items-center cursor-pointer ;
+}
 .inputError {
   @apply  rounded border-red-700 border-t border-r border-l border-b bg-red-600 bg-opacity-50;
 }
