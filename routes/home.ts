@@ -52,6 +52,7 @@ home_router.get("/", async (req: Request, res: Response) => {
     appDesign: string;
     animation: string;
     videography: string;
+    loggedIn: boolean;
   };
   const HomeContext: HomeContextType = {
     phoneNumber: process.env.PHONE_NUMBER,
@@ -63,6 +64,7 @@ home_router.get("/", async (req: Request, res: Response) => {
     appDesign: APP_DESIGN,
     animation: ANIMATION,
     videography: VIDEOGRAPHY,
+    loggedIn: res.locals.loggedIn,
   };
   res.render("home.njk", HomeContext);
 });

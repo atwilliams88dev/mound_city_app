@@ -13,8 +13,9 @@ import Router from "express-promise-router";
 import csurf from "csurf";
 import { Request } from "express";
 const accountSid = env.TWILIO_ACCOUNT_SID;
-const authToken = env.TWILIO_ACCOUNT_SID;
+const authToken = env.TWILIO_AUTH_TOKEN;
 const twilioNumber = env.TWILIO_NUMBER;
+const twilioMessagingSid = env.TWILIO_MESSAGING_SID;
 const client = require("twilio")(accountSid, authToken);
 const { body, validationResult } = require("express-validator");
 
@@ -87,7 +88,7 @@ contact_router.post(
     } = req.body;
     // console.log("services " + services);
     errors.array().map((err) => console.log(err));
-
+    console.log("did you see me");
     if (!errors.isEmpty()) {
       return res.render("contact.njk", {
         phone: process.env.PHONE_NUMBER,
@@ -113,11 +114,13 @@ contact_router.post(
         body: `new request from moundcity.io - I want to ${i_want_to} you! for ${
           services ? services : skills
         } |  ${lastName}, ${firstName} - ${email} ${phone}`,
+        messagingServiceSid: twilioMessagingSid,
+
         from: twilioNumber,
         to: `+1${process.env.PHONE_NUMBER.replace(" ", "")}`,
       })
       .then((message) => {
-        // console.log(message.sid)
+        console.log(message.sid);
         res.render("contact.njk", {
           phone: process.env.PHONE_NUMBER,
           email: process.env.EMAIL,
@@ -132,6 +135,7 @@ contact_router.post(
         });
       })
       .catch((err) => {
+        console.log(err);
         res.render("contact.njk", {
           phone: process.env.PHONE_NUMBER,
           email: process.env.EMAIL,

@@ -34,7 +34,7 @@
 
 <ol>
     <li>In the browser enter enter the droplet ip address (from DO) with port 5454. example 157.230.179.224:5454</li>
-    <li>login with credentials from docker compose </li>
+    <li>login with credentials from docker compose - look at PGUSER NOT PGADMIN_EMAIL</li>
     <li>In the droplet run docker ps to get the container id of the running postgres instance </li>
     //NEXT STEP IS IMPORTANT!!!
     <li>Run docker inspect <dockerContainerId> | grep IPAddress </li>
@@ -42,6 +42,21 @@
     <li>Port should be 5432</li>
     <li>Update username and password</li>
 </ol>
+
+# USING DEV DB
+
+<ul>
+    <li>open .env file and comment out the POSTGRES PROD SECTION and uncomment out POSTGRES DEV section</li>
+    <li>
+        run npm build
+    </li>
+    <li>
+        run npm dev
+    </li>
+    <li>
+        access PG admin at http://127.0.0.1:56683/browser/
+    </li>
+</ul>
 
 # Quick Tips
 

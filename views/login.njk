@@ -1,0 +1,92 @@
+{% from "./components/header.njk" import header %}
+<!-- prettier-ignore -->
+{% from "./components/header.njk" import header %}
+<!-- prettier-ignore -->
+{% from "./macros/footer.njk" import footer%}
+<!-- prettier-ignore -->
+{% from "./macros/logo.njk" import logo%}
+
+{{ header(
+scripts=["../static/scripts/dist/login.js"], title="Mound City Development",
+description="Mound City Development is a software development company. We work
+with some of the very best software engineers. Most of our engineers work with
+Mound City as a side hustle. This helps keep over head low and quality high.",
+links=["https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap",
+"https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"]
+) }}
+<body>
+  {% include "./components/nav.njk" %}
+  <main id="mainContainer" class="auth container mx-auto p-4 fade-in">
+    <fieldset class="reset-fieldset">
+      <legend
+        class="mb-12 text-center text-2xl md:text-4xl text-primary font-semibold"
+      >
+        Login
+      </legend>
+      <form action="/auth/login" method="POST">
+        <div>
+          <label class="text-sm text-gray-600" for="email">Email</label>
+          <input name="email" class="input w-full" id="email" type="text" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-600" for="password">Password</label>
+          <input
+            name="password"
+            class="input w-full"
+            id="password"
+            type="password"
+          />
+        </div>
+        <input type="hidden" id="csrf" name="_csrf" value="{{csrfToken}}" />
+        <div class="flex mt-2">
+          <button
+            type="button"
+            onclick="resetPassword()"
+            class="ml-auto text-sm text-secondary"
+          >
+            Forgot your password?
+          </button>
+        </div>
+
+        <div class="mt-12">
+          <button
+            class="mr-4 mx-auto lg:mx-0 w-full lg:w-auto flex py-4 lg:py-2 px-8 mb-4 text-center lg:text-left rounded border bg-primaryBlue text-white shadow-sm"
+            type="submit"
+          >
+            <svg
+              class="w-6 h-6 ml-auto lg:ml-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              ></path>
+            </svg>
+            <span class="ml-2 mr-auto lg:mr-0">Login</span>
+          </button>
+        </div>
+      </form>
+    </fieldset>
+  </main>
+
+  {% include "./components/sidebar.njk" %}
+  <script>
+    function resetPassword() {
+      fetch("/auth/password/reset", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": "{{csrfToken}}",
+        },
+        body: JSON.stringify({
+          email: document.querySelector("#email").value,
+        }),
+      });
+    }
+  </script>
+</body>

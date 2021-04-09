@@ -14,6 +14,7 @@ export interface ProcessEnv {
   ZOOM?: string;
   TWILIO_ACCOUNT_SID?: string;
   TWILIO_AUTH_TOKEN?: string;
+  TWILIO_MESSAGING_SID?: string;
   TWILIO_NUMBER?: string;
   ELEVATOR_PITCH?: string;
   ELEVATOR_PITCH_EXPANDED?: string;

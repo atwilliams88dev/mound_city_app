@@ -2,9 +2,13 @@
 <div class="bg-off w-screen pt-2 pl-2 pr-2">
   <nav class="flex justify-between pt-4 items-center mx-auto container">
     <div class="flex">{% include "./logo.njk"%}</div>
-    {% include "./hamburger.njk" %} {{ navLinks ( [ { ref: "/contact", text:
-    "Contact" }, { ref: "/about", text: "About" }, { ref: "/blog", text: "Blog"
-    }, { ref: "/", text: "Home" } ] ,"618-267-9893") }}
+    {% include "./hamburger.njk" %} {% if not loggedIn %} {{ navLinks ( [ {
+    ref:"/contact", text: "Contact" }, { ref: "/about", text: "About" }, {
+    ref:"/blog", text: "Blog" }, { ref: "/", text: "Home" }, {ref:
+    "/auth/login",text: "Login"} ] ,"618-267-9893")}} {% else %} {{ navLinks ([
+    { ref:"/contact", text: "Contact" }, { ref: "/about", text: "About" }, {
+    ref:"/blog", text: "Blog" }, { ref: "/", text: "Home" }, {ref:
+    "/auth/logout",text: "Logout"} ],"618-267-9893") }} {% endif%}
   </nav>
 </div>
 {% endblock %}

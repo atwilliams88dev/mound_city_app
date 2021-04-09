@@ -6,7 +6,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {% for row in rows %} {{ blog_card ( image=row.logo, link="/blog/"+
           row.id, name=row.name, description = row.description, day=row.day,
-          auth=row.author ) }} {% endfor %}
+          auth=row.last_name +", " + row.first_name ) }} {% endfor %}
         </div>
       </div>
     </div>

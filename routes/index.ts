@@ -6,7 +6,7 @@ import about_router from "./about";
 import admin_router from "./admin";
 import blog_router from "./blog";
 import developer_router from "./developer";
-
+import auth_router from "./auth";
 module.exports = (app: express.Application) => {
   app.use(home_router);
   app.use(contact_router);
@@ -14,4 +14,5 @@ module.exports = (app: express.Application) => {
   app.use(admin_router);
   app.use(blog_router);
   app.use(developer_router);
+  app.use(auth_router);
 };

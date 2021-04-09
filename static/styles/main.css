@@ -19,7 +19,7 @@ body {
   font-size: 16px;
   background-color: theme("colors.off");
 }
-input[type="text"] {
+input[type="text"], input[type="password"] {
   background: #F7FAFC !important
 }
 .inputError input {
@@ -49,6 +49,32 @@ li[data-active-link="false"] svg animate {
 .mainLink line {
   stroke: theme("colors.secondary");
 }
+.reset-fieldset {
+  margin-inline: 0;
+  padding-block: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  border: 0;
+}
+.auth legend {
+  padding: 0;
+  display: table;
+}
+.auth fieldset {
+    border: 0;
+    padding: 0.01em 0 0 0;
+    margin: 0;
+    min-width: 0;
+    max-width: 425px;
+    width: 100%;
+    margin: auto;
+    margin-top: 15vh;
+}
+.auth body:not(:-moz-handler-blocked) fieldset {
+    display: table-cell;
+
+}
+
 
 
 

@@ -1,0 +1,15 @@
+<fieldset>
+  <legend>Create Account</legend>
+  <form action="/auth/new" method="POST">
+    <label for="first">First</label>
+    <input id="first" name="first_name" type="text" />
+    <label for="last">Last</label>
+    <input id="last" name="last_name" type="text" />
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" />
+    <label for="password">Password</label>
+    <input id="password" name="password" type="text" />
+    <input type="hidden" name="_csrf" value="{{csrfToken}}" />
+    <button type="submit">submit</button>
+  </form>
+</fieldset>

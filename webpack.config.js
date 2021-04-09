@@ -8,6 +8,7 @@ module.exports = {
   },
   entry: {
     home: "./static/scripts/src/home_page_scripts/home.js",
+    login: "./static/scripts/src/login_page_scripts/login.js",
     contact: "./static/scripts/src/contact_page_scripts/contact.js",
     about: "./static/scripts/src/about_page_scripts/about.js",
     blog: "./static/scripts/src/blog_page_scripts/blog.js",

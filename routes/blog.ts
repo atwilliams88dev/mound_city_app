@@ -9,7 +9,10 @@ const blog_router = Router();
 
 blog_router.get("/blog", async (req, res) => {
   //   const { id } = req.params;
-  const { rows } = await db.query("SELECT * FROM posts WHERE active = true");
+  const { rows } = await db.query(
+    "SELECT * FROM posts CROSS JOIN users WHERE active = true"
+  );
+  console.log(rows);
   // console.log(rows);
   // db.query('SELECT * from "mound_users" ', (err, result) => {
   //   if (err) {
@@ -37,7 +40,12 @@ blog_router.get("/blog", async (req, res) => {
 
 blog_router.get("/blog/:id", async (req, res) => {
   const { id } = req.params;
-  const { rows } = await db.query("SELECT * FROM posts WHERE id = $1", [id]);
+  const {
+    rows,
+  } = await db.query("SELECT * FROM posts CROSS JOIN users WHERE id = $1", [
+    id,
+  ]);
+  console.log(rows);
   // console.log(rows);
   // db.query('SELECT * from "mound_users" ', (err, result) => {
   //   if (err) {

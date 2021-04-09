@@ -21,8 +21,12 @@
         ></path>
       </svg>
     </button>
-    {{ mobileNavLinks ( [ { ref: "/contact", text: "Contact" }, { ref: "/about",
-    text: "About" }, { ref: "/blog", text: "Blog" }, { ref: "/", text: "Home" }
-    ] ,"618-267-9893") }}
+    {% if not loggedIn %} {{ mobileNavLinks ( [ { ref: "/contact", text:
+    "Contact" }, { ref: "/about", text: "About" }, { ref: "/blog", text: "Blog"
+    }, { ref: "/", text: "Home" }, {ref: "/auth/login", text: "Login"} ]
+    ,"618-267-9893") }} {% else %} {{ mobileNavLinks ( [ { ref: "/contact",
+    text: "Contact" }, { ref: "/about", text: "About" }, { ref: "/blog", text:
+    "Blog" }, { ref: "/", text: "Home" }, {ref: "/auth/logout", text: "Logout"}
+    ] ,"618-267-9893") }} {% endif %}
   </div>
 </div>
