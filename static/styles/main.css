@@ -14,13 +14,16 @@
 
 @tailwind utilities;
 
-
+#quillWrapper .ql-container.ql-snow {
+  border: none;
+}
 body {
   font-size: 16px;
   background-color: theme("colors.off");
 }
-input[type="text"], input[type="password"] {
-  background: #F7FAFC !important
+input[type="text"], input[type="password"], input[type="email"] {
+  background: #F7FAFC !important;
+  margin-bottom: 5px;
 }
 .inputError input {
   color: rgb(0,0,0) !important;
@@ -40,6 +43,9 @@ a:hover {
 a:focus {
   /* color: #7035b6 !important; */
   color: #fa6b15;
+}
+#contentArea {
+  min-height: 350px;
 }
 /* HANDLE FADE OUT OF SVG LINE UNDER HOVERED MENU ITEM */
 li[data-active-link="false"] svg line,

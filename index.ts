@@ -14,10 +14,12 @@ const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const compression = require("compression");
 const bodyParser = require("body-parser");
+const auth_middleware = require("./middleware/auth");
 import { compareAsc } from "date-fns";
 
 // APP CONFIG
 const app = express();
+
 let PORT = env.EXPRESS_PORT || 3000;
 const mountRoutes = require("./routes");
 
@@ -33,30 +35,10 @@ app.use(
     contentSecurityPolicy: false,
   })
 );
-
-app.use(async function (req, res, next) {
-  let session_id = req.cookies.session_id;
-  if (session_id) {
-    let session_results = await db.query(
-      "SELECT * FROM sessions WHERE id =$1",
-      [session_id]
-    );
-    let { rows } = session_results;
-    let today = new Date();
-    let isExpiredSession = compareAsc(today, rows[0].expires_on);
-    if (isExpiredSession > 0) {
-      console.log("not valid session");
-      res.locals.loggedIn = false;
-    } else {
-      console.log("valid session");
-      res.locals.loggedIn = true;
-    }
-  }
-  next();
-});
+app.use(auth_middleware);
 
 nunjucks.configure("views", {
-  autoescape: true,
+  autoescape: false,
   express: app,
 });
 

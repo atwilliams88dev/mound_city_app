@@ -1,13 +1,36 @@
 <section class="bg-off h-screen">
   <div class="container mx-auto">
-    <div class="container mx-auto">
-      {% include "../../components/blog_heading.njk" %}
-      <div class="fade-in">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {% for row in rows %} {{ blog_card ( image=row.logo, link="/blog/"+
-          row.id, name=row.name, description = row.description, day=row.day,
-          auth=row.last_name +", " + row.first_name ) }} {% endfor %}
-        </div>
+    {% include "../../components/blog_heading.njk" %}
+    <div class="fade-in">
+      {% if is_admin %}
+      <div class="flex w-full justify-items-end mb-4 mt-4">
+        <button
+          class="ml-auto mr-4 mx-auto lg:mx-0 w-full lg:w-auto flex py-4 lg:py-2 px-8 mb-4 text-center lg:text-left rounded border bg-primaryBlue text-white shadow-sm"
+        >
+          <a class="hover:text-off flex" href="/blog/new">
+            <svg
+              class="w-6 h-6 mr-2"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+              ></path>
+            </svg>
+            Write Post
+          </a>
+        </button>
+      </div>
+      {% endif %}
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        {% for row in rows %} {{ blog_card ( image=row.logo, link="/blog/"+
+        row.id, name=row.name, description = row.description, day=row.day,
+        auth=row.last_name +", " + row.first_name ) }} {% endfor %}
       </div>
     </div>
   </div>
