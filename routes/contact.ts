@@ -47,6 +47,7 @@ contact_router.get("/contact", async (req: RequestWithMiddleWare, res) => {
   });
 });
 
+//TODO ADD EMAIL AS WELL TO THIS
 contact_router.post(
   "/contact",
   [
