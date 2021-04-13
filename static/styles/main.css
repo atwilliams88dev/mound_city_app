@@ -45,7 +45,7 @@ a:focus {
   color: #fa6b15;
 }
 #contentArea {
-  min-height: 350px;
+  min-height: 550px;
 }
 /* HANDLE FADE OUT OF SVG LINE UNDER HOVERED MENU ITEM */
 li[data-active-link="false"] svg line,
