@@ -99,7 +99,6 @@ auth_router.get("/auth/logout", async (req, res) => {
     "UPDATE sessions set expires_on=now()-'1 day'::interval WHERE id =$1",
     [req.cookies.session_id]
   );
-  console.log(session_results);
   res.redirect("/");
 });
 
@@ -114,7 +113,6 @@ auth_router.get("/auth/new", async (req: RequestWithMiddleWare, res) => {
 auth_router.post("/auth/new", async (req, res) => {
   // CHECK FOR REQUIRED DETAILS
   const { email, password, first_name, last_name, company } = req.body;
-  console.log({ company });
   if (!email || !password || !first_name || !last_name || !company) {
     res.render("generic.njk", {
       title: "You missed a field",
@@ -193,7 +191,6 @@ auth_router.post(
   }
 );
 
-// TODO HANDLE PASSWORD RESET COMING FROM EMAIL
 auth_router.post(
   "/auth/password/reset",
   async function (req: RequestWithMiddleWare, res) {
@@ -258,11 +255,6 @@ auth_router.post(
       </v:roundrect>
     <![endif]--><a href=https://moundcity.io/auth/password/new?id=${results.rows[0].password_reset_id}
     style="background-color:#0A429F;border:1px solid #0A429F;border-radius:4px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:42px;text-align:center;text-decoration:none;width:156px;-webkit-text-size-adjust:none;mso-hide:all;">Reset Password</a></div>
-
-
-
-
-
 
     `,
     };

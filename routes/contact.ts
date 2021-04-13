@@ -18,6 +18,7 @@ const twilioNumber = env.TWILIO_NUMBER;
 const twilioMessagingSid = env.TWILIO_MESSAGING_SID;
 const client = require("twilio")(accountSid, authToken);
 const { body, validationResult } = require("express-validator");
+const sgMail = require("@sendgrid/mail");
 
 // create a new express-promise-router
 // this has the same API as the normal express router except
@@ -89,7 +90,6 @@ contact_router.post(
     } = req.body;
     // console.log("services " + services);
     errors.array().map((err) => console.log(err));
-    console.log("did you see me");
     if (!errors.isEmpty()) {
       return res.render("contact.njk", {
         phone: process.env.PHONE_NUMBER,
@@ -110,6 +110,47 @@ contact_router.post(
         csrfToken: req.csrfToken(),
       });
     }
+
+    // EMAIL USER NEW ROUTE TO RESET PASSWORD
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: "alex@moundcity.io", // Change to your recipient
+      from: "alex@moundcity.io", // Change to your verified sender
+      subject: "Mound City Contact Form",
+      text: "A link is attach",
+      html: `new request from moundcity.io - I want to ${i_want_to} you! for ${
+        services ? services : skills
+      } |  ${lastName}, ${firstName} - ${email} ${phone}`,
+    };
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log("Email sent  for contact form");
+      })
+      .catch((error) => {
+        console.error(error);
+        res.render("contact.njk", {
+          phone: process.env.PHONE_NUMBER,
+          email: process.env.EMAIL,
+          user_firstName: "",
+          user_lastName: "",
+          user_email: "",
+          user_phone: "",
+          join: false,
+          hire: false,
+          success: false,
+          services: services || [],
+          skills: skills || [],
+          errors: [
+            {
+              msg:
+                "something weirds going on... try again or just email or call us",
+            },
+          ],
+          csrfToken: req.csrfToken(),
+        });
+      });
+
     client.messages
       .create({
         body: `new request from moundcity.io - I want to ${i_want_to} you! for ${

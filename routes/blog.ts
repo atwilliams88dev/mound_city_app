@@ -3,7 +3,7 @@ import db from "../db";
 import { Request } from "express";
 
 import protection_middleware from "../middleware/protection";
-import logger from "../logger";
+
 // create a new express-promise-router
 // this has the same API as the normal express router except
 // it allows you to use async functions as route handlers
@@ -55,16 +55,88 @@ blog_router.get(
 //Update blog post
 
 blog_router.get(
-  "/blog/edit/:id",
+  "/blog/edit",
+
   protection_middleware(["super_admin"]),
-  (req, res) => {
+  async (req: RequestWithMiddleWare, res) => {
+    console.log(req.query);
+    if (!req.query.id) {
+      res.status(400).render("generic.njk", {
+        title: "Something went wrong",
+        content: "Blog Id is missing.",
+      });
+      return;
+    }
     // TODO look up by id and insert into context
-    res.render("blog_new.njk");
+    let results = await db.query(
+      `
+      SELECT *
+      FROM posts
+      WHERE id = $1
+      `,
+      [req.query.id]
+    );
+    const data = results.rows[0];
+    console.log({ data });
+    res.render("blog_edit.njk", {
+      csrfToken: req.csrfToken(),
+      first_name: res.locals.first_name,
+      last_name: res.locals.last_name,
+      title: data.name,
+      active: data.active,
+      description: data.description,
+      release: data.day.toISOString().split("T")[0],
+      link: data.link,
+      content: data.content,
+      category: "",
+    });
   }
 );
 
-//Create new blog post  - just copied get for now
-// TODO HANDLE SAVE
+// update blog post
+//Create new blog post
+blog_router.put(
+  "/blog/edit",
+  protection_middleware(["super_admin"]),
+
+  async (req, res) => {
+    if (!req.query.id) {
+      res.status(400).render("generic.njk", {
+        title: "Something went wrong",
+        content: "Blog Id is missing.",
+      });
+      return;
+    }
+    const { title, description, release, content, link } = req.body;
+    if (!title || !description || !release || !content) {
+      res.send("You are missing a field");
+      return;
+    }
+
+    console.log(release);
+    let results = await db.query(
+      `
+    UPDATE posts
+    SET author=$1, name=$2, description=$3, day=$4, content=$5, link=$6
+    WHERE id=$7
+    RETURNING id;
+    `,
+      [
+        res.locals.user_email,
+        title,
+        description,
+        release,
+        content,
+        link || null,
+        req.query.id,
+      ]
+    );
+    console.log({ results });
+    res.status(201).send(results.rows[0].id);
+  }
+);
+
+//Create new blog post
 blog_router.post(
   "/blog/new",
   protection_middleware(["super_admin"]),
@@ -123,8 +195,6 @@ blog_router.post(
   }
 );
 
-//todo add route to set active false
-
 blog_router.get("/blog/:id", async (req, res) => {
   const { id } = req.params;
   const { rows } = await db.query(
@@ -141,6 +211,9 @@ blog_router.get("/blog/:id", async (req, res) => {
     article: rows[0],
     content: rows[0].content,
     link: rows[0].link || null,
+    is_admin:
+      res.locals.user_role === "super_admin" ||
+      res.locals.user_role === "admin",
   });
 });
 export default blog_router;

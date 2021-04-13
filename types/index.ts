@@ -24,4 +24,5 @@ export interface ProcessEnv {
   APP_DESIGN?: string;
   ANIMATION?: string;
   VIDEOGRAPHY?: string;
+  SENDGRID_API_KEY?: string;
 }
