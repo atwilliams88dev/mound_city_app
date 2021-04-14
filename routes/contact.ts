@@ -114,7 +114,7 @@ contact_router.post(
     // EMAIL USER NEW ROUTE TO RESET PASSWORD
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
-      to: "alex@moundcity.io", // Change to your recipient
+      to: "atwilliams88dev@moundcity.io", // Change to your recipient
       from: "alex@moundcity.io", // Change to your verified sender
       subject: "Mound City Contact Form",
       text: "A link is attach",
