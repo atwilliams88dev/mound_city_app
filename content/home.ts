@@ -1,6 +1,6 @@
 // #HOME PAGE
-export const ELEVATOR_PITCH_EXPANDED = `Application development is complex and time consuming. Hiring highly qualified developers is both expensive and difficult; and nearly impossible for small businesses. We want to help fill that gap for every business.`;
-export const ELEVATOR_PITCH = `Mound City is a small team of developers and designers who work together on mobile and web applications. We can help with each phase of a project, including research, design, implementation, and monitoring. Please consider letting our team work for you on your next application.`;
+export const ELEVATOR_PITCH_EXPANDED = `Alex works as a Senior Software engineer for a Fortune 100 company and does Mound City work in the evening and on weekends (side hustle). This allows Mound City to provide high value, offering great user experiences at affordable prices. Alex has a passion for application development, and in a previous life, owned a small business (insurance brokerage) with five employees. Alex understands small business and what it takes to succeed.`;
+export const ELEVATOR_PITCH = `Mound City is a small business that is owned and operated by Alex Williams. Mound City can help with projects as small as a local business website and as large as a cross-platform enterprise application.  Please consider letting Mound City work for you on your next application.`;
 export const APPLICATION_DEVELOPMENT = `Let us build you an IOS, Android, Desktop, or a Web app.`;
 export const CONTENT_CREATION = `Good content is key in SEO and in inviting users into your business.`;
 export const BRAIN_STORMING = `Lets work together to identify the right problems to work on.`;
